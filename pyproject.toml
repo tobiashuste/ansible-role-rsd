@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden - Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[tool.poetry]
+name = "rsd"
+version = "0.1.0"
+description = "This role provides a setup for the Research Software Directory."
+authors = ["Tobias Huste <t.huste@hzdr.de>", "Norman Ziegner <norman.ziegner@ufz.de>"]
+license = "Apache-2.0"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+ansible = "^5.5.0"
+
+[tool.poetry.dev-dependencies]
+ansible-lint = "^6.0.2"
+yamllint = "^1.26.3"
+reuse = "^0.14.0"
+molecule = {version = "^3.6.1", extras = ["docker"]}
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
