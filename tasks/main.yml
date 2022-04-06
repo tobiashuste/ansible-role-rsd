@@ -1,0 +1,84 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+- name: "Create RSD working directory"
+  ansible.builtin.file:
+    path: "{{ rsd_working_directory }}"
+    owner: "root"
+    group: "root"
+    state: "directory"
+    mode: "0755"
+
+- name: "Clone RSD git repository"
+  ansible.builtin.git:
+    repo: "{{ rsd_repo_url }}"
+    dest: "{{ rsd_working_directory }}"
+    version: "{{ rsd_version }}"
+    force: yes
+
+- name: "Make files and directories readable"
+  ansible.builtin.file:
+    path: "{{ rsd_working_directory }}"
+    owner: "root"
+    group: "root"
+    mode: "u=rwX,g=rX,o=rX"
+    recurse: yes
+
+- name: "Copy environment file"
+  ansible.builtin.copy:
+    src: "{{ rsd_environment_file }}"
+    dest: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"
+    owner: "root"
+    group: "root"
+    mode: "0600"
+  no_log: True
+
+- name: "Copy TLS certificates"
+  ansible.builtin.copy:
+    src: "{{ (inventory_dir | basename, item.file) | path_join }}"
+    dest: "{{ (item.dest, item.file) | path_join }}"
+    owner: "root"
+    group: "root"
+    mode: "{{ item.mode }}"
+  loop:
+    - { file: "{{ rsd_tls_cert_file }}", dest: "/etc/ssl/certs", mode: "0644" }
+    - { file: "{{ rsd_tls_key_file }}", dest: "/etc/ssl/private", mode: "0600" }
+  no_log: True
+
+- name: "Apply customizations to RSD project"
+  ansible.builtin.template:
+    src: "{{ item.template }}"
+    dest: "{{ item.dest }}"
+    owner: "root"
+    group: "root"
+    mode: "0644"
+  loop:
+    -
+      {
+        template: "docker-compose.yml.j2",
+        dest: "{{ (rsd_working_directory, 'docker-compose.yml') | path_join }}",
+      }
+    -
+      {
+        template: "Caddyfile.j2",
+        dest: "{{ (rsd_working_directory, 'https/Caddyfile') | path_join }}",
+      }
+  no_log: True
+
+- name: "Create environment file symlink"
+  ansible.builtin.file:
+    src: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"
+    dest: "{{ (rsd_working_directory, '.env') | path_join }}"
+    owner: "root"
+    group: "root"
+    state: "link"
+
+- name: "Build containers with docker-compose"
+  community.docker.docker_compose:
+    project_name: "rsd"
+    project_src: "{{ rsd_working_directory }}"
+    state: "present"
+    build: yes

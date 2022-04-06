@@ -1,0 +1,39 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+# The URL to the RSD git repository
+rsd_repo_url: "https://github.com/research-software-directory/research-software-directory.git"
+
+# The path where the repository will be checked out.
+rsd_working_directory: "/opt/rsd"
+
+# Git tag, branch or commit hash that will be checked out.
+rsd_version: "master"
+
+# Inventory specific environment file
+rsd_environment_file: "rsd-secrets.env"
+
+# TLS certificate file
+rsd_tls_cert_file: "rsd.pem"
+# TLS key file
+rsd_tls_key_file: "rsd.key"
+
+# Basic Auth Password Hash
+rsd_basic_auth_hash: "changeme"
+
+# RSD ENV variables
+rsd_auth_gh_client_id: "changeme"
+rsd_auth_gh_client_secret: "changeme"
+rsd_auth_gh_organization: "changeme"
+rsd_domain: "localhost"
+rsd_ssl_domains: "localhost"
+rsd_gh_access_token: "changeme"
+rsd_jwt_secret: "changeme"
+rsd_zenodo_access_token: "changeme"
+rsd_zotero_api_key: "changeme"
+rsd_zotero_library: "changeme"
+
+...
