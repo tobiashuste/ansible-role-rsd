@@ -16,7 +16,17 @@ Group your changes into these categories:
 
 `Added`, `Changed`, `Deprecated`, `Removed`, `Fixed`, `Security`.
 
-## [0.1.0](https://gitlab.com/hifis/ansible/rsd/-/releases/v0.1.0) - 2022-04-06
+## Unreleased
+
+[List of commits](https://github.com/hifis-net/ansible-role-rsd/compare/v0.1.0...main)
+
+### Changed
+
+* Implement lint and release workflow via GitHub actions
+  ([!1](https://github.com/hifis-net/ansible-role-rsd/pull/1)
+  by [Normo](https://github.com/Normo)).
+
+## [0.1.0](https://github.com/hifis-net/ansible-role-rsd/releases/tag/v0.1.0) - 2022-04-06
 
 ### Added
-Initial release of the Ansible Research Software Directory (RSD) Role.
+Initial release of the Research Software Directory (RSD) Ansible Role.
