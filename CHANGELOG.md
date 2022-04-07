@@ -20,6 +20,8 @@ Group your changes into these categories:
 
 [List of commits](https://github.com/hifis-net/ansible-role-rsd/compare/v0.1.0...main)
 
+### Changed
+
 * Implement lint and release workflow via GitHub actions
   ([!1](https://github.com/hifis-net/ansible-role-rsd/pull/1)
   by [Normo](https://github.com/Normo)).
