@@ -1,0 +1,37 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden - Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+dependency:
+  name: "galaxy"
+  options:
+    role-file: "requirements.yml"
+driver:
+  name: "docker"
+platforms:
+  - name: "instance_rsd"
+    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2004}-ansible:latest"
+    pre_build_image: true
+    privileged: true
+    override_command: false
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+lint: |
+  yamllint --strict --format colored .
+  ansible-lint -v --force-color --offline .
+provisioner:
+  name: "ansible"
+  inventory:
+    hosts:
+      all:
+        vars:
+          pip_install_packages:
+            - name: "docker"
+    host_vars:
+      instance_rsd:
+        rsd_tls_cert_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.pem') | path_join }}"
+        rsd_tls_key_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.key') | path_join }}"
+verifier:
+  name: "ansible"

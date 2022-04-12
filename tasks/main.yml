@@ -18,6 +18,8 @@
     dest: "{{ rsd_working_directory }}"
     version: "{{ rsd_version }}"
     force: yes
+  tags:
+    - "molecule-idempotence-notest"
 
 - name: "Make files and directories readable"
   ansible.builtin.file:
@@ -26,6 +28,8 @@
     group: "root"
     mode: "u=rwX,g=rX,o=rX"
     recurse: yes
+  tags:
+    - "molecule-idempotence-notest"
 
 - name: "Copy environment file"
   ansible.builtin.template:
@@ -35,6 +39,8 @@
     group: "root"
     mode: "0600"
   no_log: True
+  tags:
+    - "molecule-idempotence-notest"
 
 - name: "Copy TLS certificates"
   ansible.builtin.copy:
@@ -67,6 +73,8 @@
         dest: "{{ (rsd_working_directory, 'https/Caddyfile') | path_join }}",
       }
   no_log: True
+  tags:
+    - "molecule-idempotence-notest"
 
 - name: "Create environment file symlink"
   ansible.builtin.file:
@@ -82,3 +90,5 @@
     project_src: "{{ rsd_working_directory }}"
     state: "present"
     build: yes
+  tags:
+    - "molecule-idempotence-notest"
