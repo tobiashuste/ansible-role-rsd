@@ -12,7 +12,7 @@
     state: "directory"
     mode: "0755"
 
-- name: "Clone RSD git repository"
+- name: Clone RSD git repository
   ansible.builtin.git:
     repo: "{{ rsd_repo_url }}"
     dest: "{{ rsd_working_directory }}"
