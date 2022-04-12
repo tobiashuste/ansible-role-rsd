@@ -28,7 +28,7 @@
     recurse: yes
 
 - name: "Copy environment file"
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: "{{ rsd_environment_file }}"
     dest: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"
     owner: "root"
