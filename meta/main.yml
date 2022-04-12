@@ -28,6 +28,8 @@ galaxy_info:
     - "escience"
     - "esciencecenter"
 
-dependencies: []
+dependencies:
+    - role: "geerlingguy.pip"
+    - role: "geerlingguy.docker"
 
 ...

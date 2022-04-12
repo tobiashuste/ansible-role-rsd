@@ -18,9 +18,6 @@ on:
 env:
   PY_COLORS: 1
   ANSIBLE_FORCE_COLOR: 1
-  POETRY_VIRTUALENVS_PATH: "~/.cache/venv"
-  POETRY_CACHE_DIR: "~/.cache/poetry"
-  PIP_CACHE_DIR: "~/.cache/pip"
 
 jobs:
 
@@ -51,6 +48,27 @@ jobs:
 
       - name: "Lint code."
         run: "poetry run reuse lint"
+
+  test:
+    name: "Run Molecule tests."
+    runs-on: "ubuntu-latest"
+    strategy:
+      fail-fast: true
+      matrix:
+        distro:
+          - "ubuntu2004"
+
+    steps:
+      - name: "Check out the codebase."
+        uses: "actions/checkout@v3"
+
+      - name: "Prepare the job environment."
+        uses: "./.github/workflows/prepare-action"
+
+      - name: "Run Molecule tests."
+        run: "poetry run molecule test"
+        env:
+          MOLECULE_DISTRO: "${{ matrix.distro }}"
 
   release:
     name: "Release new version on Ansible Galaxy"
