@@ -14,7 +14,7 @@ rsd_working_directory: "/opt/rsd"
 rsd_version: "master"
 
 # Inventory specific environment file
-rsd_environment_file: "rsd-secrets.env"
+rsd_environment_file: "rsd-secrets.env.j2"
 
 # TLS certificate file
 rsd_tls_cert_file: "rsd.pem"
