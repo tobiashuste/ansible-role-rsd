@@ -54,28 +54,6 @@
     - { file: "{{ rsd_tls_key_file }}", dest: "/etc/ssl/private", mode: "0600" }
   no_log: True
 
-- name: "Apply customizations to RSD project"
-  ansible.builtin.template:
-    src: "{{ item.template }}"
-    dest: "{{ item.dest }}"
-    owner: "root"
-    group: "root"
-    mode: "0644"
-  loop:
-    -
-      {
-        template: "docker-compose.yml.j2",
-        dest: "{{ (rsd_working_directory, 'docker-compose.yml') | path_join }}",
-      }
-    -
-      {
-        template: "Caddyfile.j2",
-        dest: "{{ (rsd_working_directory, 'https/Caddyfile') | path_join }}",
-      }
-  no_log: True
-  tags:
-    - "molecule-idempotence-notest"
-
 - name: "Create environment file symlink"
   ansible.builtin.file:
     src: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"
