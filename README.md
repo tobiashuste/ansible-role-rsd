@@ -34,20 +34,8 @@ using Ansible.
 - `rsd_tls_key_file`
   - Default: `rsd.key`
   - Description: TLS key file
-- `rsd_basic_auth_hash`
-  - Default: `changeme`
-  - Description: Base-64 encoding of the hashed password for HTTP basic authentication
 
 ### RSD Env Variables
-- `rsd_auth_gh_client_id`
-  - Default: `changeme`
-  - Description: GitHub OAuth application client ID
-- `rsd_auth_gh_client_secret`
-  - Default: `changeme`
-  - Description: GitHub OAuth application client secret
-- `rsd_auth_gh_organization`
-  - Default: `changeme`
-  - Description: GitHub organization name
 - `rsd_domain`
   - Default: `localhost`
   - Description: RSD Domain

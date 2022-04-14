@@ -10,24 +10,21 @@ rsd_repo_url: "https://github.com/research-software-directory/RSD-as-a-service.g
 # The path where the repository will be checked out.
 rsd_working_directory: "/opt/rsd"
 
-# Git tag, branch or commit hash that will be checked out.
-rsd_version: "master"
+# RSD-as-a-service release tag or "latest"
+rsd_version: "latest"
 
 # Inventory specific environment file
 rsd_environment_file: "rsd-secrets.env.j2"
+
+# docker-compose.yml template file
+rsd_docker_compose_template_file: "docker-compose.yml.j2"
 
 # TLS certificate file
 rsd_tls_cert_file: "rsd.pem"
 # TLS key file
 rsd_tls_key_file: "rsd.key"
 
-# Basic Auth Password Hash
-rsd_basic_auth_hash: "changeme"
-
 # RSD ENV variables
-rsd_auth_gh_client_id: "changeme"
-rsd_auth_gh_client_secret: "changeme"
-rsd_auth_gh_organization: "changeme"
 rsd_domain: "localhost"
 rsd_ssl_domains: "localhost"
 rsd_postgres_password: "changeme"
