@@ -10,26 +10,7 @@
     owner: "root"
     group: "root"
     state: "directory"
-    mode: "0755"
-
-- name: "Clone RSD git repository"
-  ansible.builtin.git:
-    repo: "{{ rsd_repo_url }}"
-    dest: "{{ rsd_working_directory }}"
-    version: "{{ rsd_version }}"
-    force: yes
-  tags:
-    - "molecule-idempotence-notest"
-
-- name: "Make files and directories readable"
-  ansible.builtin.file:
-    path: "{{ rsd_working_directory }}"
-    owner: "root"
-    group: "root"
-    mode: "u=rwX,g=rX,o=rX"
-    recurse: yes
-  tags:
-    - "molecule-idempotence-notest"
+    mode: "0750"
 
 - name: "Copy environment file"
   ansible.builtin.template:
@@ -39,8 +20,15 @@
     group: "root"
     mode: "0600"
   no_log: True
-  tags:
-    - "molecule-idempotence-notest"
+
+- name: "Copy docker-compose.yml"
+  ansible.builtin.template:
+    src: "{{ rsd_docker_compose_template_file }}"
+    dest: "{{ (rsd_working_directory, 'docker-compose.yml') | path_join }}"
+    owner: "root"
+    group: "root"
+    mode: "0640"
+    validate: "docker-compose -f %s config -q"
 
 - name: "Copy TLS certificates"
   ansible.builtin.copy:
@@ -62,11 +50,19 @@
     group: "root"
     state: "link"
 
-- name: "Build containers with docker-compose"
+- name: "Get info on docker host"
+  community.docker.docker_host_info:
+  register: "result"
+
+- name: "Print docker host info"
+  ansible.builtin.debug:
+    var: "result.host_info"
+
+- name: "Start containers with docker-compose"
   community.docker.docker_compose:
     project_name: "rsd"
     project_src: "{{ rsd_working_directory }}"
     state: "present"
-    build: yes
-  tags:
-    - "molecule-idempotence-notest"
+    debug: "yes"
+
+...
