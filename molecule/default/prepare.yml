@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden - Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+- name: "Prepare"
+  hosts: "all"
+  vars:
+    docker_daemon_options:
+      storage-driver: "vfs"
+    pip_install_packages:
+      - name: "docker"
+      - name: "docker-compose"
+  tasks:
+    - name: "Update apt cache"
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 600
+      when: "ansible_os_family == 'Debian'"
+
+    - name: "Apply geerlingguy.pip role"
+      ansible.builtin.include_role:
+        name: "geerlingguy.pip"
+
+    - name: "Apply geerlingguy.docker role"
+      ansible.builtin.include_role:
+        name: "geerlingguy.docker"
