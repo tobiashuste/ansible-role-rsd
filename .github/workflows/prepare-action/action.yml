@@ -18,7 +18,7 @@ runs:
       id: "setup-python"
       with:
         python-version: '3.9'
-        cache: 'poetry'
+        # cache: 'poetry'
 
     - name: "Make sure Python3.9 is used"
       run: "poetry env use python3.9"
