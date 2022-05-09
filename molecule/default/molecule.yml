@@ -18,11 +18,6 @@ platforms:
     override_command: false
     systemd: true
     tty: true
-    volumes:
-      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    tmpfs:
-      - /tmp
-      - /run
 lint: |
   yamllint --strict --format colored .
   ansible-lint -v --force-color --offline .

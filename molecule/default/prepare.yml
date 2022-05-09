@@ -6,12 +6,12 @@
 ---
 - name: "Prepare"
   hosts: "all"
+  become: true
   vars:
-    docker_daemon_options:
-      storage-driver: "vfs"
     pip_install_packages:
       - name: "docker"
       - name: "docker-compose"
+    ansible_remote_tmp: "/tmp"
   tasks:
     - name: "Update apt cache"
       ansible.builtin.apt:
