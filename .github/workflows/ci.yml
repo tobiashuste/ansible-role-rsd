@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - "main"
+      - "3-set-up-rsd-as-a-service"
     tags:
       - "v*.*.*"
   schedule:
