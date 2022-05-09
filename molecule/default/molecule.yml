@@ -18,6 +18,7 @@ platforms:
     override_command: false
     systemd: true
     tty: true
+    rootless: false
 lint: |
   yamllint --strict --format colored .
   ansible-lint -v --force-color --offline .
