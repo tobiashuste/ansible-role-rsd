@@ -44,7 +44,7 @@
 
 - name: "Copy TLS certificates"
   ansible.builtin.copy:
-    src: "{{ (inventory_dir | basename, item.file) | path_join }}"
+    src: "{{ item.file }}"
     dest: "{{ (item.dest, item.file | basename ) | path_join }}"
     owner: "root"
     group: "root"
