@@ -5,9 +5,9 @@ SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 SPDX-License-Identifier: Apache-2.0
 -->
 
-# Ansible Role: Research Software Directory (RSD)
+# Ansible Role: Research Software Directory (RSD-as-a-service)
 
-Setting up the [Research Software Directory](https://github.com/research-software-directory/research-software-directory)
+Setting up the [Research Software Directory](https://github.com/research-software-directory/RSD-as-a-service)
 using Ansible.
 
 Currently [supported platforms](meta/main.yml) are:
@@ -17,6 +17,7 @@ Currently [supported platforms](meta/main.yml) are:
 ## Requirements
 
 * [`docker`](https://pypi.org/project/docker/) (Docker SDK for Python)
+* [`docker-compose`](https://pypi.org/project/docker-compose/)
 
 ## Role Variables
 
@@ -29,6 +30,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_version`
   - Default: `main`
   - Description: What version of the repository to check out.
+- `rsd_dependencies`
+  - Default: `["docker", "docker-compose"]`
+  - Description: List of required python modules.
 - `rsd_environment_file`
   - Default: `rsd-secrets.env`
   - Description: Inventory specific environment file
@@ -64,7 +68,9 @@ Currently [supported platforms](meta/main.yml) are:
 
 ## Dependencies
 
-The Research Software Directory requires `docker` and `docker-compose` to be available on the system.
+The Research Software Directory requires `docker` and `docker-compose` to be
+available on the system. This role has been successfully used together with the
+following Ansible roles:
 * Docker - [geerlingguy.docker](https://galaxy.ansible.com/geerlingguy/docker)
 * Pip - [geerlingguy.pip](https://galaxy.ansible.com/geerlingguy/pip)
 
