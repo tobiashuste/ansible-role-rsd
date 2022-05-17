@@ -14,10 +14,10 @@ rsd_working_directory: "/opt/rsd"
 rsd_version: "latest"
 
 # Inventory specific environment file
-rsd_environment_file: "rsd-secrets.env.j2"
+rsd_environment_file: "rsd-secrets.env"
 
 # docker-compose.yml template file
-rsd_docker_compose_template_file: "docker-compose.yml.j2"
+rsd_docker_compose_template_file: "docker-compose.yml"
 
 # TLS certificate file
 rsd_tls_cert_file: "rsd.pem"
