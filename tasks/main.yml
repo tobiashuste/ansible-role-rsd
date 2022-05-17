@@ -68,7 +68,6 @@
         project_src: "{{ rsd_working_directory }}"
         state: "absent"
         remove_volumes: "yes"
-      ignore_errors: "yes"
 
     - name: "Restart all containers"
       community.docker.docker_compose:
