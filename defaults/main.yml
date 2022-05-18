@@ -5,35 +5,34 @@
 
 ---
 # The URL to the RSD git repository
-rsd_repo_url: "https://github.com/research-software-directory/research-software-directory.git"
+rsd_repo_url: "https://github.com/research-software-directory/RSD-as-a-service.git"
 
 # The path where the repository will be checked out.
 rsd_working_directory: "/opt/rsd"
 
-# Git tag, branch or commit hash that will be checked out.
-rsd_version: "master"
+# RSD-as-a-service release tag or "latest"
+rsd_version: "latest"
 
 # Inventory specific environment file
-rsd_environment_file: "rsd-secrets.env.j2"
+rsd_environment_file: "rsd-secrets.env"
+
+# docker-compose.yml template file
+rsd_docker_compose_template_file: "docker-compose.yml"
 
 # TLS certificate file
 rsd_tls_cert_file: "rsd.pem"
 # TLS key file
 rsd_tls_key_file: "rsd.key"
 
-# Basic Auth Password Hash
-rsd_basic_auth_hash: "changeme"
-
 # RSD ENV variables
-rsd_auth_gh_client_id: "changeme"
-rsd_auth_gh_client_secret: "changeme"
-rsd_auth_gh_organization: "changeme"
 rsd_domain: "localhost"
 rsd_ssl_domains: "localhost"
-rsd_gh_access_token: "changeme"
+rsd_postgres_password: "changeme"
+rsd_gh_access_token: "username:token"
 rsd_jwt_secret: "changeme"
+rsd_surfconext_client_secret: "changeme"
 rsd_zenodo_access_token: "changeme"
-rsd_zotero_api_key: "changeme"
+rsd_zotero_api_token: "changeme"
 rsd_zotero_library: "changeme"
 
 ...
