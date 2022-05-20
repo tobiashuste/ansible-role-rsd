@@ -10,6 +10,10 @@ SPDX-License-Identifier: Apache-2.0
 Setting up the [Research Software Directory](https://github.com/research-software-directory/research-software-directory)
 using Ansible.
 
+Currently [supported platforms](meta/main.yml) are:
+* Ubuntu 20.04 LTS
+* Ubuntu 22.04 LTS
+
 ## Requirements
 
 * [`docker`](https://pypi.org/project/docker/) (Docker SDK for Python)
