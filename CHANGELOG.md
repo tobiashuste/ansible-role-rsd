@@ -4,8 +4,31 @@
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v0.1.0...HEAD)
 
+**Implemented enhancements:**
+
+- Remove dependency on the inventory when copying TLS certificates [\#18](https://github.com/hifis-net/ansible-role-rsd/issues/18)
+- Migrate changelog to github-changelog-generator [\#5](https://github.com/hifis-net/ansible-role-rsd/issues/5)
+- Update dependencies via Dependabot [\#4](https://github.com/hifis-net/ansible-role-rsd/issues/4)
+- Setup new RSD-as-a-service implementation [\#3](https://github.com/hifis-net/ansible-role-rsd/issues/3)
+- Add role testing using molecule [\#2](https://github.com/hifis-net/ansible-role-rsd/issues/2)
+- Stop prepend the inventory dir name when copying TLS certificate files [\#19](https://github.com/hifis-net/ansible-role-rsd/pull/19) ([Normo](https://github.com/Normo))
+- Add molecule MVP [\#11](https://github.com/hifis-net/ansible-role-rsd/pull/11) ([Normo](https://github.com/Normo))
+- Migrate changelog to github-changelog-generator [\#7](https://github.com/hifis-net/ansible-role-rsd/pull/7) ([Normo](https://github.com/Normo))
+
+**Fixed bugs:**
+
+- Bug: RSD environment template file not found [\#9](https://github.com/hifis-net/ansible-role-rsd/issues/9)
+
 **Merged pull requests:**
 
+- Bump reuse from 0.14.0 to 1.0.0 [\#23](https://github.com/hifis-net/ansible-role-rsd/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Upgrade python to 3.10 [\#21](https://github.com/hifis-net/ansible-role-rsd/pull/21) ([Normo](https://github.com/Normo))
+- Bump ansible from 5.7.0 to 5.7.1 [\#16](https://github.com/hifis-net/ansible-role-rsd/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ansible from 5.6.0 to 5.7.0 [\#15](https://github.com/hifis-net/ansible-role-rsd/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Set up RSD-as-a-service [\#13](https://github.com/hifis-net/ansible-role-rsd/pull/13) ([Normo](https://github.com/Normo))
+- fix: make RSD env template file work [\#10](https://github.com/hifis-net/ansible-role-rsd/pull/10) ([Normo](https://github.com/Normo))
+- Bump ansible from 5.5.0 to 5.6.0 [\#8](https://github.com/hifis-net/ansible-role-rsd/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
+- fixes\(\#4\): added dependabot.yml [\#6](https://github.com/hifis-net/ansible-role-rsd/pull/6) ([tharun634](https://github.com/tharun634))
 - Implement lint and release workflow via GitHub actions [\#1](https://github.com/hifis-net/ansible-role-rsd/pull/1) ([Normo](https://github.com/Normo))
 
 <!--
