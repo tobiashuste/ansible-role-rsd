@@ -19,7 +19,7 @@ platforms:
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
 lint: |
-  yamllint --strict --format colored .
+  yamllint --strict --format colored . &&
   ansible-lint -v --force-color --offline .
 provisioner:
   name: "ansible"
