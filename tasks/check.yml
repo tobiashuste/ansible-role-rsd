@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+- name: "Check for python modules"
+  community.general.python_requirements_info:
+    dependencies: "{{ rsd_dependencies }}"
+  register: "python_requirements"
+
+- name: "Assert that required python modules are available"
+  ansible.builtin.assert:
+    that:
+      - "item in python_requirements.valid"
+    fail_msg: "Python module '{{ item }}' is missing."
+  loop: "{{ rsd_dependencies }}"
+
+...

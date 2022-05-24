@@ -4,6 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 
 ---
+# Python dependencies for RSD role
+rsd_dependencies:
+  - "docker"
+  - "docker-compose"
+
 # The URL to the RSD git repository
 rsd_repo_url: "https://github.com/research-software-directory/RSD-as-a-service.git"
 
