@@ -36,15 +36,33 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_environment_file`
   - Default: `rsd-secrets.env`
   - Description: Inventory specific environment file
-- `rsd_tls_cert_file`
-  - Default: `rsd.pem`
-  - Description: TLS certificate file
-- `rsd_tls_key_file`
-  - Default: `rsd.key`
-  - Description: TLS key file
+- `rsd_docker_compose_template_file`
+  - Default: `docker-compose.yml.j2`
+  - Description: Template file for docker-compose.yml
 - `rsd_container_registry_path`
   - Default: `ghcr.io/research-software-directory/rsd-saas`
   - Description: Path to the container registry from where the images are pulled
+- `rsd_nginx_config_template`
+  - Default: `nginx.conf.j2`
+  - Description: Template file for Nginx configuration
+- `rsd_tls_cert_file`
+  - Default: `''`
+  - Description: TLS certificate file
+- `rsd_tls_key_file`
+  - Default: `''`
+  - Description: TLS key file
+- `rsd_tls_cert_path`
+  - Default: `/etc/ssl/certs/rsd.pem`
+  - Description: Absolute destination path for TLS certificate file
+- `rsd_tls_key_path`
+  - Default: `/etc/ssl/private/rsd.key`
+  - Description: Absolute destination path for TLS key file
+- `rsd_nginx_dhparam_file`
+  - Default: `''`
+  - Description: File with DH parameters for nginx
+- `rsd_nginx_dhparam_file_path`
+  - Default: `"/opt/rsd/dhparam.pem"`
+  - Description: Absolute destination path for DH parameters file
 
 ### RSD Env Variables
 - `rsd_domain`

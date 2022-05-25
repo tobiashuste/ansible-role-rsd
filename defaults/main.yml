@@ -24,10 +24,26 @@ rsd_environment_file: "rsd-secrets.env.j2"
 # docker-compose.yml template file
 rsd_docker_compose_template_file: "docker-compose.yml.j2"
 
+# Template file for Nginx configuration
+rsd_nginx_config_template: "nginx.conf.j2"
+
 # TLS certificate file
-rsd_tls_cert_file: "rsd.pem"
+rsd_tls_cert_file: ""
+
 # TLS key file
-rsd_tls_key_file: "rsd.key"
+rsd_tls_key_file: ""
+
+# File with DH parameters for nginx
+rsd_nginx_dhparam_file: ""
+
+# Absolute destination path for TLS certificate file
+rsd_tls_cert_path: "/etc/ssl/certs/rsd.pem"
+
+# Absolute destination path for TLS key file
+rsd_tls_key_path: "/etc/ssl/private/rsd.key"
+
+# Absolute destination path for DH parameters file
+rsd_nginx_dhparam_file_path: "{{ rsd_working_directory }}/dhparam.pem"
 
 # Path to the container registry where the images are stored
 rsd_container_registry_path: "ghcr.io/research-software-directory/rsd-saas"
