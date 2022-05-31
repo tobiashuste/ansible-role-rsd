@@ -49,9 +49,11 @@
     owner: "root"
     group: "root"
     state: "link"
+  when: "not is_initial_dryrun"
 
 - name: "Start RSD-as-a-service"
   tags: "molecule-notest"
+  when: "not is_initial_dryrun"
   block:
 
     - name: "Start all containers"
