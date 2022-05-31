@@ -24,6 +24,8 @@
       when: "ansible_service_mgr == 'systemd'"
       changed_when: false
       failed_when: "systemctl_status.rc > 1"
+      check_mode: no
+
   tasks:
     - name: "Include research-software-directory"
       ansible.builtin.include_role:

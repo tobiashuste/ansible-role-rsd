@@ -39,3 +39,21 @@ provisioner:
         rsd_tls_key_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.key') | path_join }}"
 verifier:
   name: "ansible"
+scenario:
+  test_sequence:
+    - "dependency"
+    - "lint"
+    - "cleanup"
+    - "destroy"
+    - "syntax"
+    - "create"
+    - "prepare"
+    - "check"
+    - "converge"
+    - "idempotence"
+    - "side_effect"
+    - "verify"
+    - "cleanup"
+    - "destroy"
+
+...

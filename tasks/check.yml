@@ -16,4 +16,13 @@
     fail_msg: "Python module '{{ item }}' is missing."
   loop: "{{ rsd_dependencies }}"
 
+- name: "Get stats for RSD working directory"
+  ansible.builtin.stat:
+    path: "{{ rsd_working_directory }}"
+  register: "working_directory"
+
+- name: "Determine if this is an initial dry-run"
+  ansible.builtin.set_fact:
+    is_initial_dryrun: "{{ ansible_check_mode and not working_directory.stat.exists }}"
+
 ...
