@@ -29,6 +29,9 @@ rsd_tls_cert_file: "rsd.pem"
 # TLS key file
 rsd_tls_key_file: "rsd.key"
 
+# Path to the container registry where the images are stored
+rsd_container_registry_path: "ghcr.io/research-software-directory/rsd-saas"
+
 # RSD ENV variables
 rsd_domain: "localhost"
 rsd_ssl_domains: "localhost"
