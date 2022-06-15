@@ -92,3 +92,10 @@ following Ansible roles:
 ## Author Information
 
 This role was created by [HIFIS Software Services](https://www.hifis.net/).
+
+## Contributors
+
+We would like to thank and give credits to the following contributors of this
+project:
+
+* [tharun634](https://github.com/tharun634) 
