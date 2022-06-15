@@ -42,6 +42,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_tls_key_file`
   - Default: `rsd.key`
   - Description: TLS key file
+- `rsd_container_registry_path`
+  - Default: `ghcr.io/research-software-directory/rsd-saas`
+  - Description: Path to the container registry from where the images are pulled
 
 ### RSD Env Variables
 - `rsd_domain`

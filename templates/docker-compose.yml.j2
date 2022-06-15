@@ -9,7 +9,7 @@ version: "3.0"
 services:
   database:
     container_name: database
-    image: ghcr.io/research-software-directory/rsd-saas/database:{{ rsd_version }}
+    image: {{ rsd_container_registry_path }}/database:{{ rsd_version }}
     expose:
       - 5432
     environment:
@@ -26,7 +26,7 @@ services:
 
   backend:
     container_name: backend
-    image: ghcr.io/research-software-directory/rsd-saas/backend:{{ rsd_version }}
+    image: {{ rsd_container_registry_path }}/backend:{{ rsd_version }}
     expose:
       - 3500
     environment:
@@ -43,7 +43,7 @@ services:
 
   auth:
     container_name: auth
-    image: ghcr.io/research-software-directory/rsd-saas/auth:{{ rsd_version }}
+    image: {{ rsd_container_registry_path }}/auth:{{ rsd_version }}
     expose:
       - 7000
     environment:
@@ -62,7 +62,7 @@ services:
 
   frontend:
     container_name: frontend
-    image: ghcr.io/research-software-directory/rsd-saas/frontend:{{ rsd_version }}
+    image: {{ rsd_container_registry_path }}/frontend:{{ rsd_version }}
     environment:
       - POSTGREST_URL
       - RSD_AUTH_URL
@@ -81,7 +81,7 @@ services:
 
   scrapers:
     container_name: scrapers
-    image: ghcr.io/research-software-directory/rsd-saas/scrapers:{{ rsd_version }}
+    image: {{ rsd_container_registry_path }}/scrapers:{{ rsd_version }}
     environment:
       # it uses values from .env file
       - POSTGREST_URL
@@ -97,7 +97,7 @@ services:
       - net
   nginx:
     container_name: nginx
-    image: ghcr.io/research-software-directory/rsd-saas/nginx:{{ rsd_version }}
+    image: {{ rsd_container_registry_path }}/nginx:{{ rsd_version }}
     ports:
       - "80:80"
       - "443:443"
