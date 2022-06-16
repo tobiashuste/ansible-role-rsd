@@ -45,6 +45,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_nginx_config_template`
   - Default: `nginx.conf.j2`
   - Description: Template file for Nginx configuration
+- `rsd_handle_tls_files`
+  - Default: `true`
+  - Description: Whether the role should copy TLS files to the target host.
 - `rsd_tls_cert_file`
   - Default: `''`
   - Description: TLS certificate file

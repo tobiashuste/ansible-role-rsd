@@ -33,9 +33,7 @@ server {
     ssl_session_cache shared:SSL:10m;  # about 40000 sessions
     ssl_session_tickets off;
 
-{% if rsd_nginx_dhparam_file | length > 0 %}
     ssl_dhparam /etc/ssl/dhparam.pem;
-{% endif %}
 
     # intermediate configuration
     ssl_protocols TLSv1.2 TLSv1.3;

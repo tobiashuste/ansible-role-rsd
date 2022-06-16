@@ -38,7 +38,7 @@
     group: "root"
     mode: "0640"
 
-- name: "Copy TLS certificates"
+- name: "Copy TLS files"
   ansible.builtin.copy:
     src: "{{ item.file }}"
     dest: "{{ item.dest }}"
@@ -48,17 +48,9 @@
   loop:
     - { file: "{{ rsd_tls_cert_file }}", dest: "{{ rsd_tls_cert_path }}", mode: "0644" }
     - { file: "{{ rsd_tls_key_file }}", dest: "{{ rsd_tls_key_path }}", mode: "0600" }
+    - { file: "{{ rsd_nginx_dhparam_file }}", dest: "{{ rsd_nginx_dhparam_file_path }}", mode: "0600" }
   no_log: True
-
-- name: "Copy dhparam file"
-  ansible.builtin.copy:
-    src: "{{ rsd_nginx_dhparam_file }}"
-    dest: "{{ rsd_nginx_dhparam_file_path }}"
-    owner: "root"
-    group: "root"
-    mode: "0600"
-  no_log: True
-  when: "rsd_nginx_dhparam_file | length > 0"
+  when: "rsd_handle_tls_files | default('true') | bool"
 
 - name: "Create environment file symlink"
   ansible.builtin.file:

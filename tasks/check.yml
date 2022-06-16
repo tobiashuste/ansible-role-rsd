@@ -17,12 +17,16 @@
   loop: "{{ rsd_dependencies }}"
 
 - name: "Assert TLS certificate is defined"
-  when: "rsd_tls_cert_file | length == 0"
+  when:
+    - "rsd_handle_tls_files | default('true') | bool"
+    - "rsd_tls_cert_file | length == 0"
   ansible.builtin.fail:
       msg: "No TLS certificate provided, 'rsd_tls_cert_file' undefined!"
 
 - name: "Assert TLS private key is defined"
-  when: "rsd_tls_key_file | length == 0"
+  when:
+    - "rsd_handle_tls_files | default('true') | bool"
+    - "rsd_tls_key_file | length == 0"
   ansible.builtin.fail:
       msg: "No TLS private key provided, 'rsd_tls_key_file' undefined!"
 
