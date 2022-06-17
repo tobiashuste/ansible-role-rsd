@@ -10,15 +10,15 @@ dependency:
     role-file: "requirements.yml"
     requirements-file: "requirements.yml"
 driver:
-  name: "docker"
+  name: "podman"
 platforms:
   - name: "instance_rsd"
-    image: "geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
+    image: "docker.io/geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
     pre_build_image: true
     privileged: true
     override_command: false
-    volumes:
-      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    systemd: true
+    tty: true
 lint: |
   yamllint --strict --format colored . &&
   ansible-lint -v --force-color --offline .
