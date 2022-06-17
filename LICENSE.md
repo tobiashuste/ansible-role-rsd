@@ -1,6 +1,6 @@
 # License Hint
 
-Copyright © 2022 Helmholtz Centre for Environmental Research (UFZ)
+Copyright © 2022 Helmholtz Centre for Environmental Research (UFZ)  
 Copyright © 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
 
 This work is licensed under the [Apache-2.0](LICENSES/Apache-2.0.txt) license.
