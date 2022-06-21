@@ -38,20 +38,6 @@
     group: "root"
     mode: "0640"
 
-- name: "Copy TLS files"
-  ansible.builtin.copy:
-    src: "{{ item.file }}"
-    dest: "{{ item.dest }}"
-    owner: "root"
-    group: "root"
-    mode: "{{ item.mode }}"
-  loop:
-    - { file: "{{ rsd_tls_cert_file }}", dest: "{{ rsd_tls_cert_path }}", mode: "0644" }
-    - { file: "{{ rsd_tls_key_file }}", dest: "{{ rsd_tls_key_path }}", mode: "0600" }
-    - { file: "{{ rsd_nginx_dhparam_file }}", dest: "{{ rsd_nginx_dhparam_file_path }}", mode: "0600" }
-  no_log: True
-  when: "rsd_handle_tls_files | default('true') | bool"
-
 - name: "Create environment file symlink"
   ansible.builtin.file:
     src: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"

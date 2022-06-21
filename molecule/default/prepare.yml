@@ -26,3 +26,16 @@
     - name: "Apply geerlingguy.docker role"
       ansible.builtin.include_role:
         name: "geerlingguy.docker"
+
+    - name: "Copy TLS files"
+      ansible.builtin.copy:
+        src: "{{ item.file }}"
+        dest: "{{ item.dest }}"
+        owner: "root"
+        group: "root"
+        mode: "{{ item.mode }}"
+      loop:
+        - { file: "{{ tls_cert_file }}", dest: "{{ rsd_tls_cert_path }}", mode: "0644" }
+        - { file: "{{ tls_key_file }}", dest: "{{ rsd_tls_key_path }}", mode: "0600" }
+        - { file: "{{ nginx_dhparam_file }}", dest: "{{ rsd_nginx_dhparam_file_path }}", mode: "0600" }
+      no_log: True

@@ -35,9 +35,9 @@ provisioner:
             - name: "docker"
     host_vars:
       instance_rsd:
-        rsd_tls_cert_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.pem') | path_join }}"
-        rsd_tls_key_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.key') | path_join }}"
-        rsd_nginx_dhparam_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'dhparam.pem') | path_join }}"
+        tls_cert_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.pem') | path_join }}"
+        tls_key_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'test.key') | path_join }}"
+        nginx_dhparam_file: "{{ (lookup('env', 'MOLECULE_SCENARIO_DIRECTORY'), 'dhparam.pem') | path_join }}"
 verifier:
   name: "ansible"
 scenario:

@@ -27,15 +27,6 @@ rsd_docker_compose_template_file: "docker-compose.yml.j2"
 # Template file for Nginx configuration
 rsd_nginx_config_template: "nginx.conf.j2"
 
-# TLS certificate file
-rsd_tls_cert_file: ""
-
-# TLS key file
-rsd_tls_key_file: ""
-
-# File with DH parameters for nginx
-rsd_nginx_dhparam_file: ""
-
 # Absolute destination path for TLS certificate file
 rsd_tls_cert_path: "/etc/ssl/certs/rsd.pem"
 
