@@ -16,7 +16,24 @@
     fail_msg: "Python module '{{ item }}' is missing!"
   loop: "{{ rsd_dependencies }}"
 
-- name: "Get stats for RSD working directory"
+- name: "Get stats of TLS certificate"
+  ansible.builtin.stat:
+    path: "{{ rsd_tls_cert_path }}"
+  register: "tls_cert"
+
+- name: "Get stats of TLS private key"
+  ansible.builtin.stat:
+    path: "{{ rsd_tls_key_path }}"
+  register: "tls_key"
+
+- name: "Assert that required TLS files are present"
+  ansible.builtin.assert:
+    that:
+      - "tls_cert.stat.exists"
+      - "tls_key.stat.exists"
+    fail_msg: "TLS certificate and/or private key missing!"
+
+- name: "Get stats of RSD working directory"
   ansible.builtin.stat:
     path: "{{ rsd_working_directory }}"
   register: "working_directory"
