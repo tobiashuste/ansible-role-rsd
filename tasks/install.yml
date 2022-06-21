@@ -47,6 +47,16 @@
     state: "link"
   when: "not is_initial_dryrun"
 
+- name: "Generate DH parameters file for nginx"
+  community.crypto.openssl_dhparam:
+    state: "present"
+    path: "{{ rsd_nginx_dhparam_file_path }}"
+    size: "{{ rsd_dhparam_size | default('4096') }}"
+    owner: "root"
+    group: "root"
+    mode: "0600"
+  when: "create_dhparam_file"
+
 - name: "Start RSD-as-a-service"
   tags: "molecule-notest"
   when: "not is_initial_dryrun"

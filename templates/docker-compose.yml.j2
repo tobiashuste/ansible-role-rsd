@@ -109,12 +109,10 @@ services:
     networks:
       - net
     volumes:
+      - {{ (rsd_working_directory, 'nginx.conf') | path_join }}:/etc/nginx/conf.d/default.conf:ro
       - {{ rsd_tls_cert_path }}:/etc/ssl/certs/rsd.pem:ro
       - {{ rsd_tls_key_path }}:/etc/ssl/private/rsd.key:ro
-      - {{ (rsd_working_directory, 'nginx.conf') | path_join }}:/etc/nginx/conf.d/default.conf:ro
-{% if rsd_nginx_dhparam_file | length > 0 %}
       - {{ rsd_nginx_dhparam_file_path }}:/etc/ssl/dhparam.pem:ro
-{% endif %}
 
 # define name for docker network
 # it should have name: rsd-as-a-service_net

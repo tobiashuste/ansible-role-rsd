@@ -35,7 +35,6 @@
         group: "root"
         mode: "{{ item.mode }}"
       loop:
-        - { file: "{{ tls_cert_file }}", dest: "{{ rsd_tls_cert_path }}", mode: "0644" }
-        - { file: "{{ tls_key_file }}", dest: "{{ rsd_tls_key_path }}", mode: "0600" }
-        - { file: "{{ nginx_dhparam_file }}", dest: "{{ rsd_nginx_dhparam_file_path }}", mode: "0600" }
-      no_log: True
+        - { file: "{{ tls_cert_file }}", dest: "/etc/ssl/certs/rsd.pem", mode: "0644" }
+        - { file: "{{ tls_key_file }}", dest: "/etc/ssl/private/rsd.key", mode: "0600" }
+        - { file: "{{ nginx_dhparam_file }}", dest: "/etc/ssl/private/dhparam.pem", mode: "0600" }

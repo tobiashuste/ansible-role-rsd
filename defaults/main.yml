@@ -34,7 +34,7 @@ rsd_tls_cert_path: "/etc/ssl/certs/rsd.pem"
 rsd_tls_key_path: "/etc/ssl/private/rsd.key"
 
 # Absolute destination path for DH parameters file
-rsd_nginx_dhparam_file_path: "{{ rsd_working_directory }}/dhparam.pem"
+rsd_nginx_dhparam_file_path: "/etc/ssl/private/dhparam.pem"
 
 # Path to the container registry where the images are stored
 rsd_container_registry_path: "ghcr.io/research-software-directory/rsd-saas"
