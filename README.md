@@ -68,6 +68,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_hgfaai_token_url`
   - Default: `https://login-dev.helmholtz.de/oauth2/token`
   - Description: Helmholtz AAI token URL
+- `rsd_hgfaai_allow_external_users`
+  - Default: `false`
+  - Description: Set to `true` to allow users from non-Helmholtz centres or social IdPs
 - `rsd_postgres_password`
   - Default: `changeme`
   - Description: Postgres passwort
