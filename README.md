@@ -59,9 +59,33 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_domain`
   - Default: `localhost`
   - Description: RSD Domain
-- `rsd_ssl_domains`
-  - Default: `localhost`
-  - Description: RSD SSL Domains
+- `rsd_auth_providers`
+  - Default: `SURFCONEXT;HELMHOLTZAAI`
+  - Description: Semicolon-separated list of supported OpenID auth providers
+- `rsd_auth_user_mail_whitelist`
+  - Default: `''`
+  - Description: Semicolon-separated list of user email addresses which are allowed to log into the RSD
+- `rsd_hgfaai_client_id`
+  - Default: `rsd-dev`
+  - Description: Public Helmholtz AAI client ID
+- `rsd_hgfaai_client_secret`
+  - Default: `changeme`
+  - Description: Helmholtz AAI client secret
+- `rsd_hgfaai_well_known_url`
+  - Default: `https://login-dev.helmholtz.de/oauth2/.well-known/openid-configuration`
+  - Description: Helmholtz AAI well known URL
+- `rsd_hgfaai_token_url`
+  - Default: `https://login-dev.helmholtz.de/oauth2/token`
+  - Description: Helmholtz AAI token URL
+- `rsd_hgfaai_allow_external_users`
+  - Default: `false`
+  - Description: Set to `true` to allow users from non-Helmholtz centres or social IdPs
+- `rsd_postgres_password`
+  - Default: `changeme`
+  - Description: Postgres passwort
+- `rsd_surfconext_client_secret`
+  - Default: `changeme`
+  - Description: SurfConext client secret
 - `rsd_gh_access_token`
   - Default: `changeme`
   - Description: GitHub personal access token
@@ -71,12 +95,12 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_zenodo_access_token`
   - Default: `changeme`
   - Description: Zenodo access token
-- `rsd_zotero_api_key`
-  - Default: `changeme`
-  - Description: Zotero API key
-- `rsd_zotero_library`
-  - Default: `changeme`
-  - Description: Zotero library name
+- `rsd_crossref_contact_email`
+  - Default: `''`
+  - Description: Email address that Crossref can contact you with to comply with their "polite" policy
+- `rsd_hotjar_id`
+  - Default: `''`
+  - Description: ID for Hotjar Tracking Code (needs to be a number)
 
 ## Dependencies
 

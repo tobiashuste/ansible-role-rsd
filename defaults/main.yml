@@ -41,13 +41,18 @@ rsd_container_registry_path: "ghcr.io/research-software-directory/rsd-saas"
 
 # RSD ENV variables
 rsd_domain: "localhost"
-rsd_ssl_domains: "localhost"
+rsd_auth_providers: "SURFCONEXT;HELMHOLTZAAI"
+rsd_hgfaai_client_id: "rsd-dev"
+rsd_hgfaai_client_secret: "changeme"
+rsd_hgfaai_well_known_url: "https://login-dev.helmholtz.de/oauth2/.well-known/openid-configuration"
+rsd_hgfaai_token_url: "https://login-dev.helmholtz.de/oauth2/token"
+rsd_hgfaai_allow_external_users: "false"
 rsd_postgres_password: "changeme"
 rsd_gh_access_token: "username:token"
 rsd_jwt_secret: "changeme"
 rsd_surfconext_client_secret: "changeme"
 rsd_zenodo_access_token: "changeme"
-rsd_zotero_api_token: "changeme"
-rsd_zotero_library: "changeme"
+rsd_crossref_contact_email: ""
+rsd_hotjar_id: ""
 
 ...
