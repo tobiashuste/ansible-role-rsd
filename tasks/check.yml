@@ -13,10 +13,36 @@
   ansible.builtin.assert:
     that:
       - "item in python_requirements.valid"
-    fail_msg: "Python module '{{ item }}' is missing."
+    fail_msg: "Python module '{{ item }}' is missing!"
   loop: "{{ rsd_dependencies }}"
 
-- name: "Get stats for RSD working directory"
+- name: "Get stats of TLS certificate"
+  ansible.builtin.stat:
+    path: "{{ rsd_tls_cert_path }}"
+  register: "tls_cert"
+
+- name: "Get stats of TLS private key"
+  ansible.builtin.stat:
+    path: "{{ rsd_tls_key_path }}"
+  register: "tls_key"
+
+- name: "Assert that required TLS files are present"
+  ansible.builtin.assert:
+    that:
+      - "tls_cert.stat.exists"
+      - "tls_key.stat.exists"
+    fail_msg: "TLS certificate and/or private key missing!"
+
+- name: "Get stats of DH parameters file"
+  ansible.builtin.stat:
+    path: "{{ rsd_nginx_dhparam_file_path }}"
+  register: "dhparam_file"
+
+- name: "Determine if DH parameters file needs to be created"
+  ansible.builtin.set_fact:
+    create_dhparam_file: "{{ not dhparam_file.stat.exists }}"
+
+- name: "Get stats of RSD working directory"
   ansible.builtin.stat:
     path: "{{ rsd_working_directory }}"
   register: "working_directory"

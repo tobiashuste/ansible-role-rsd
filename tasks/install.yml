@@ -30,17 +30,13 @@
     mode: "0640"
     validate: "docker-compose -f %s config -q"
 
-- name: "Copy TLS certificates"
-  ansible.builtin.copy:
-    src: "{{ item.file }}"
-    dest: "{{ (item.dest, item.file | basename ) | path_join }}"
+- name: "Copy nginx configuration file"
+  ansible.builtin.template:
+    src: "{{ rsd_nginx_config_template }}"
+    dest: "{{ (rsd_working_directory, 'nginx.conf') | path_join }}"
     owner: "root"
     group: "root"
-    mode: "{{ item.mode }}"
-  loop:
-    - { file: "{{ rsd_tls_cert_file }}", dest: "/etc/ssl/certs", mode: "0644" }
-    - { file: "{{ rsd_tls_key_file }}", dest: "/etc/ssl/private", mode: "0600" }
-  no_log: True
+    mode: "0640"
 
 - name: "Create environment file symlink"
   ansible.builtin.file:
@@ -50,6 +46,16 @@
     group: "root"
     state: "link"
   when: "not is_initial_dryrun"
+
+- name: "Generate DH parameters file for nginx"
+  community.crypto.openssl_dhparam:
+    state: "present"
+    path: "{{ rsd_nginx_dhparam_file_path }}"
+    size: "{{ rsd_dhparam_size | default('4096') }}"
+    owner: "root"
+    group: "root"
+    mode: "0600"
+  when: "create_dhparam_file"
 
 - name: "Start RSD-as-a-service"
   tags: "molecule-notest"
