@@ -53,9 +53,9 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        distro:
-          - "ubuntu2004"
-          - "ubuntu2204"
+        image:
+          - "ghcr.io/hifis-net/ubuntu-systemd:20.04"
+          - "ghcr.io/hifis-net/ubuntu-systemd:22.04"
 
     steps:
       - name: "Check out the codebase."
@@ -72,7 +72,7 @@ jobs:
       - name: "Run Molecule tests."
         run: "XDG_RUNTIME_DIR=/run/user/$UID poetry run molecule test"
         env:
-          MOLECULE_DISTRO: "${{ matrix.distro }}"
+          MOLECULE_IMAGE: "${{ matrix.image }}"
 
   release:
     name: "Release new version on Ansible Galaxy"

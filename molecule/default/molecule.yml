@@ -13,7 +13,7 @@ driver:
   name: "podman"
 platforms:
   - name: "instance_rsd"
-    image: "docker.io/geerlingguy/docker-${MOLECULE_DISTRO:-ubuntu2204}-ansible:latest"
+    image: "${MOLECULE_IMAGE:-ghcr.io/hifis-net/ubuntu-systemd:22.04}"
     pre_build_image: true
     privileged: true
     override_command: false
