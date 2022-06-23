@@ -15,7 +15,7 @@
 - name: "Copy environment file"
   ansible.builtin.template:
     src: "{{ rsd_environment_file }}"
-    dest: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"
+    dest: "{{ (rsd_working_directory, '.env') | path_join }}"
     owner: "root"
     group: "root"
     mode: "0600"
@@ -37,15 +37,6 @@
     owner: "root"
     group: "root"
     mode: "0640"
-
-- name: "Create environment file symlink"
-  ansible.builtin.file:
-    src: "{{ (rsd_working_directory, 'rsd-secrets.env') | path_join }}"
-    dest: "{{ (rsd_working_directory, '.env') | path_join }}"
-    owner: "root"
-    group: "root"
-    state: "link"
-  when: "not is_initial_dryrun"
 
 - name: "Generate DH parameters file for nginx"
   community.crypto.openssl_dhparam:
