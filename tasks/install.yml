@@ -49,29 +49,12 @@
   when: "create_dhparam_file"
 
 - name: "Start RSD-as-a-service"
+  community.docker.docker_compose:
+    project_name: "rsd"
+    project_src: "{{ rsd_working_directory }}"
+    state: "present"
+    debug: "yes"
   tags: "molecule-notest"
   when: "not is_initial_dryrun"
-  block:
-
-    - name: "Start all containers"
-      community.docker.docker_compose:
-        project_name: "rsd"
-        project_src: "{{ rsd_working_directory }}"
-        state: "present"
-        debug: "yes"
-
-  rescue:
-    - name: "Remove containers and volumes"
-      community.docker.docker_compose:
-        project_name: "rsd"
-        project_src: "{{ rsd_working_directory }}"
-        state: "absent"
-        remove_volumes: "yes"
-
-    - name: "Restart all containers"
-      community.docker.docker_compose:
-        project_name: "rsd"
-        project_src: "{{ rsd_working_directory }}"
-        state: "present"
 
 ...
