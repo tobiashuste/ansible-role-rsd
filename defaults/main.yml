@@ -37,7 +37,7 @@ rsd_tls_key_path: "/etc/ssl/private/rsd.key"
 rsd_nginx_dhparam_file_path: "/etc/ssl/private/dhparam.pem"
 
 # Path to the container registry where the images are stored
-rsd_container_registry_path: "ghcr.io/research-software-directory/rsd-saas"
+rsd_container_registry_path: "ghcr.io/hifis-net/rsd-saas"
 
 # RSD ENV variables
 rsd_domain: "localhost"

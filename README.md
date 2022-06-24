@@ -40,7 +40,7 @@ Currently [supported platforms](meta/main.yml) are:
   - Default: `docker-compose.yml.j2`
   - Description: Template file for docker-compose.yml
 - `rsd_container_registry_path`
-  - Default: `ghcr.io/research-software-directory/rsd-saas`
+  - Default: `ghcr.io/hifis-net/rsd-saas`
   - Description: Path to the container registry from where the images are pulled
 - `rsd_nginx_config_template`
   - Default: `nginx.conf.j2`
