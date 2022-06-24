@@ -91,7 +91,7 @@ Currently [supported platforms](meta/main.yml) are:
   - Description: GitHub personal access token
 - `rsd_jwt_secret`
   - Default: `changeme`
-  - Description: JSON web token secret to generate/verify tokens
+  - Description: JSON web token secret with at least 32 characters to generate/verify tokens
 - `rsd_zenodo_access_token`
   - Default: `changeme`
   - Description: Zenodo access token
