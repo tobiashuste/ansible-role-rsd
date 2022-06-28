@@ -5,7 +5,7 @@
 
 [tool.poetry]
 name = "rsd"
-version = "0.1.0"
+version = "1.0.0"
 description = "This role provides a setup for the Research Software Directory."
 authors = ["Tobias Huste <t.huste@hzdr.de>", "Norman Ziegner <norman.ziegner@ufz.de>"]
 license = "Apache-2.0"
