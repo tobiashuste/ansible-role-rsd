@@ -9,14 +9,14 @@ rsd_dependencies:
   - "docker"
   - "docker-compose"
 
-# The URL to the RSD git repository
-rsd_repo_url: "https://github.com/research-software-directory/RSD-as-a-service.git"
-
 # The path where the repository will be checked out.
 rsd_working_directory: "/opt/rsd"
 
-# RSD-as-a-service release tag or "latest"
+# RSD-as-a-service release tag, commit hash or "latest"
 rsd_version: "latest"
+
+# Path to the container registry where the images are stored
+rsd_container_registry_path: "ghcr.io/hifis-net/rsd-saas"
 
 # Inventory specific environment file
 rsd_environment_file: "rsd-secrets.env.j2"
@@ -36,9 +36,6 @@ rsd_tls_key_path: "/etc/ssl/private/rsd.key"
 # Absolute destination path for DH parameters file
 rsd_nginx_dhparam_file_path: "/etc/ssl/private/dhparam.pem"
 
-# Path to the container registry where the images are stored
-rsd_container_registry_path: "ghcr.io/research-software-directory/rsd-saas"
-
 # RSD ENV variables
 rsd_domain: "localhost"
 rsd_auth_providers: "SURFCONEXT;HELMHOLTZAAI"
@@ -49,7 +46,7 @@ rsd_hgfaai_token_url: "https://login-dev.helmholtz.de/oauth2/token"
 rsd_hgfaai_allow_external_users: "false"
 rsd_postgres_password: "changeme"
 rsd_gh_access_token: "username:token"
-rsd_jwt_secret: "changeme"
+rsd_jwt_secret: "changemeChangemeChangemeChangeme"
 rsd_surfconext_client_secret: "changeme"
 rsd_zenodo_access_token: "changeme"
 rsd_crossref_contact_email: ""

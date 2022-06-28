@@ -21,27 +21,24 @@ Currently [supported platforms](meta/main.yml) are:
 
 ## Role Variables
 
-- `rsd_repo_url`
-  - Default: `https://github.com/research-software-directory/research-software-directory.git`
-  - Description: The RSD git repository URL.
+- `rsd_dependencies`
+  - Default: `["docker", "docker-compose"]`
+  - Description: List of required python modules.
 - `rsd_working_directory`
   - Default: `/opt/rsd`
   - Description: The path where the RSD repository will be checked out.
 - `rsd_version`
   - Default: `main`
-  - Description: What version of the repository to check out.
-- `rsd_dependencies`
-  - Default: `["docker", "docker-compose"]`
-  - Description: List of required python modules.
+  - Description: What version of the RSD-as-a-service container images to deploy.
+- `rsd_container_registry_path`
+  - Default: `ghcr.io/hifis-net/rsd-saas`
+  - Description: Path to the container registry from where the images are pulled
 - `rsd_environment_file`
   - Default: `rsd-secrets.env`
   - Description: Inventory specific environment file
 - `rsd_docker_compose_template_file`
   - Default: `docker-compose.yml.j2`
   - Description: Template file for docker-compose.yml
-- `rsd_container_registry_path`
-  - Default: `ghcr.io/research-software-directory/rsd-saas`
-  - Description: Path to the container registry from where the images are pulled
 - `rsd_nginx_config_template`
   - Default: `nginx.conf.j2`
   - Description: Template file for Nginx configuration
@@ -90,8 +87,8 @@ Currently [supported platforms](meta/main.yml) are:
   - Default: `changeme`
   - Description: GitHub personal access token
 - `rsd_jwt_secret`
-  - Default: `changeme`
-  - Description: JSON web token secret to generate/verify tokens
+  - Default: `changemeChangemeChangemeChangeme`
+  - Description: JSON web token secret with **at least 32 characters** to generate/verify tokens
 - `rsd_zenodo_access_token`
   - Default: `changeme`
   - Description: Zenodo access token
