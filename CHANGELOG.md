@@ -34,11 +34,13 @@
 
 **Closed issues:**
 
+- Prepare release v1.0.0 [\#51](https://github.com/hifis-net/ansible-role-rsd/issues/51)
 - Change package management tool named in CONTRIBUTING guide [\#40](https://github.com/hifis-net/ansible-role-rsd/issues/40)
 
 **Merged pull requests:**
 
 - Update requirements.yml [\#53](https://github.com/hifis-net/ansible-role-rsd/pull/53) ([Normo](https://github.com/Normo))
+- Prepare release v1.0.0 [\#52](https://github.com/hifis-net/ansible-role-rsd/pull/52) ([Normo](https://github.com/Normo))
 - Make role ready for production [\#50](https://github.com/hifis-net/ansible-role-rsd/pull/50) ([Normo](https://github.com/Normo))
 - Bump ansible from 5.9.0 to 6.0.0 [\#47](https://github.com/hifis-net/ansible-role-rsd/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Add jammy jellyfish to supported platforms [\#46](https://github.com/hifis-net/ansible-role-rsd/pull/46) ([Normo](https://github.com/Normo))
