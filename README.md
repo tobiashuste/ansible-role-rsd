@@ -85,7 +85,7 @@ Currently [supported platforms](meta/main.yml) are:
   - Description: Postgres password
 - `rsd_postgres_authenticator_password`
   - Default: `ChangeMe`
-  - Description: Postgres authenticator password used by the backend (should be different from `rsd_postgres_password`)
+  - Description: Postgres authenticator password used by the backend (**should be different from `rsd_postgres_password`**)
 - `rsd_max_requests_github`
   - Default: `6`
   - Description: Maximum number of requests to the GitHub API per run
