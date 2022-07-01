@@ -59,6 +59,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_auth_providers`
   - Default: `SURFCONEXT;HELMHOLTZAAI`
   - Description: Semicolon-separated list of supported OpenID auth providers
+- `rsd_admin_email_list`
+  - Default: `''`
+  - Description: Semicolon-separated list of user email addresses (exact match incl. the letter casing) of RSD admins
 - `rsd_auth_user_mail_whitelist`
   - Default: `''`
   - Description: Semicolon-separated list of user email addresses which are allowed to log into the RSD
@@ -80,6 +83,15 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_postgres_password`
   - Default: `changeme`
   - Description: Postgres passwort
+- `rsd_max_requests_github`
+  - Default: `6`
+  - Description: Maximum number of requests to the GitHub API per run
+- `rsd_max_requests_gitlab`
+  - Default: `6`
+  - Description: Maximum number of requests to the GitLab API per run
+- `rsd_max_requests_doi`
+  - Default: `6`
+  - Description: Maximum number of mentions to scrape per run
 - `rsd_surfconext_client_secret`
   - Default: `changeme`
   - Description: SurfConext client secret
