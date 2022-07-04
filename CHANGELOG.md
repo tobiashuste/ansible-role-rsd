@@ -11,6 +11,7 @@
 
 **Merged pull requests:**
 
+- Prepare release v1.1.0 [\#59](https://github.com/hifis-net/ansible-role-rsd/pull/59) ([Normo](https://github.com/Normo))
 - Add restart policy to docker-compose.yml template [\#58](https://github.com/hifis-net/ansible-role-rsd/pull/58) ([Normo](https://github.com/Normo))
 - Add variable rsd\_postgres\_authenticator\_password [\#57](https://github.com/hifis-net/ansible-role-rsd/pull/57) ([Normo](https://github.com/Normo))
 - Add more env variables to configure RSD [\#55](https://github.com/hifis-net/ansible-role-rsd/pull/55) ([Normo](https://github.com/Normo))
@@ -21,18 +22,18 @@
 
 **Implemented enhancements:**
 
+- Remove dependency on the inventory when copying TLS certificates [\#18](https://github.com/hifis-net/ansible-role-rsd/issues/18)
 - Make RSD image registry and repository configurable [\#35](https://github.com/hifis-net/ansible-role-rsd/issues/35)
 - Add github-changelog-generator params file [\#25](https://github.com/hifis-net/ansible-role-rsd/issues/25)
 - Add support for Ubuntu 22.04 [\#24](https://github.com/hifis-net/ansible-role-rsd/issues/24)
-- Remove dependency on the inventory when copying TLS certificates [\#18](https://github.com/hifis-net/ansible-role-rsd/issues/18)
 - Add preflight checks [\#12](https://github.com/hifis-net/ansible-role-rsd/issues/12)
 - Migrate changelog to github-changelog-generator [\#5](https://github.com/hifis-net/ansible-role-rsd/issues/5)
 - Update dependencies via Dependabot [\#4](https://github.com/hifis-net/ansible-role-rsd/issues/4)
 - Setup new RSD-as-a-service implementation [\#3](https://github.com/hifis-net/ansible-role-rsd/issues/3)
 - Add role testing using molecule [\#2](https://github.com/hifis-net/ansible-role-rsd/issues/2)
 - Update template files [\#45](https://github.com/hifis-net/ansible-role-rsd/pull/45) ([Normo](https://github.com/Normo))
-- Make container registry configurable [\#36](https://github.com/hifis-net/ansible-role-rsd/pull/36) ([Normo](https://github.com/Normo))
 - Test initial dry-run with molecule [\#34](https://github.com/hifis-net/ansible-role-rsd/pull/34) ([Normo](https://github.com/Normo))
+- Make container registry configurable [\#36](https://github.com/hifis-net/ansible-role-rsd/pull/36) ([Normo](https://github.com/Normo))
 - Add nginx configuration to enable HTTPS by default [\#31](https://github.com/hifis-net/ansible-role-rsd/pull/31) ([Normo](https://github.com/Normo))
 - Add preflight checks [\#30](https://github.com/hifis-net/ansible-role-rsd/pull/30) ([Normo](https://github.com/Normo))
 - Run molecule test against Ubuntu 22.04 [\#27](https://github.com/hifis-net/ansible-role-rsd/pull/27) ([Normo](https://github.com/Normo))
@@ -49,14 +50,11 @@
 
 **Closed issues:**
 
-- Prepare release v1.0.0 [\#51](https://github.com/hifis-net/ansible-role-rsd/issues/51)
 - Change package management tool named in CONTRIBUTING guide [\#40](https://github.com/hifis-net/ansible-role-rsd/issues/40)
+- Prepare release v1.0.0 [\#51](https://github.com/hifis-net/ansible-role-rsd/issues/51)
 
 **Merged pull requests:**
 
-- Update requirements.yml [\#53](https://github.com/hifis-net/ansible-role-rsd/pull/53) ([Normo](https://github.com/Normo))
-- Prepare release v1.0.0 [\#52](https://github.com/hifis-net/ansible-role-rsd/pull/52) ([Normo](https://github.com/Normo))
-- Make role ready for production [\#50](https://github.com/hifis-net/ansible-role-rsd/pull/50) ([Normo](https://github.com/Normo))
 - Bump ansible from 5.9.0 to 6.0.0 [\#47](https://github.com/hifis-net/ansible-role-rsd/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Add jammy jellyfish to supported platforms [\#46](https://github.com/hifis-net/ansible-role-rsd/pull/46) ([Normo](https://github.com/Normo))
 - License File Formatting [\#43](https://github.com/hifis-net/ansible-role-rsd/pull/43) ([Normo](https://github.com/Normo))
@@ -70,6 +68,9 @@
 - Bump robertdebock/galaxy-action from 1.2.0 to 1.2.1 [\#28](https://github.com/hifis-net/ansible-role-rsd/pull/28) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Add params file for github-changelog-generator [\#26](https://github.com/hifis-net/ansible-role-rsd/pull/26) ([Normo](https://github.com/Normo))
 - Bump reuse from 0.14.0 to 1.0.0 [\#23](https://github.com/hifis-net/ansible-role-rsd/pull/23) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update requirements.yml [\#53](https://github.com/hifis-net/ansible-role-rsd/pull/53) ([Normo](https://github.com/Normo))
+- Prepare release v1.0.0 [\#52](https://github.com/hifis-net/ansible-role-rsd/pull/52) ([Normo](https://github.com/Normo))
+- Make role ready for production [\#50](https://github.com/hifis-net/ansible-role-rsd/pull/50) ([Normo](https://github.com/Normo))
 - Upgrade python to 3.10 [\#21](https://github.com/hifis-net/ansible-role-rsd/pull/21) ([Normo](https://github.com/Normo))
 - Bump ansible from 5.7.0 to 5.7.1 [\#16](https://github.com/hifis-net/ansible-role-rsd/pull/16) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump ansible from 5.6.0 to 5.7.0 [\#15](https://github.com/hifis-net/ansible-role-rsd/pull/15) ([dependabot[bot]](https://github.com/apps/dependabot))
