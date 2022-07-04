@@ -24,6 +24,7 @@ services:
       - pgdb:/var/lib/postgresql/data/
     networks:
       - net
+    restart: unless-stopped
 
   backend:
     container_name: backend
@@ -41,6 +42,7 @@ services:
       - database
     networks:
       - net
+    restart: unless-stopped
 
   auth:
     container_name: auth
@@ -51,6 +53,7 @@ services:
       # it uses values from .env file
       - POSTGREST_URL
       - RSD_AUTH_PROVIDERS
+      - RSD_ADMIN_EMAIL_LIST
       - RSD_AUTH_USER_MAIL_WHITELIST
       - NEXT_PUBLIC_SURFCONEXT_CLIENT_ID
       - NEXT_PUBLIC_SURFCONEXT_REDIRECT
@@ -71,6 +74,7 @@ services:
       - backend
     networks:
       - net
+    restart: unless-stopped
 
   frontend:
     container_name: frontend
@@ -99,6 +103,7 @@ services:
       - auth
     networks:
       - net
+    restart: unless-stopped
 
   scrapers:
     container_name: scrapers
@@ -118,6 +123,8 @@ services:
       - backend
     networks:
       - net
+    restart: unless-stopped
+
   nginx:
     container_name: nginx
     image: {{ rsd_container_registry_path }}/nginx:{{ rsd_version }}
@@ -136,6 +143,7 @@ services:
       - {{ rsd_tls_cert_path }}:/etc/ssl/certs/rsd.pem:ro
       - {{ rsd_tls_key_path }}:/etc/ssl/private/rsd.key:ro
       - {{ rsd_nginx_dhparam_file_path }}:/etc/ssl/dhparam.pem:ro
+    restart: unless-stopped
 
 # define name for docker network
 # it should have name: rsd-as-a-service_net
