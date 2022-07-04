@@ -1,5 +1,20 @@
 # Changelog
 
+## [v1.1.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.1.0) (2022-07-04)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.0.0...v1.1.0)
+
+**Implemented enhancements:**
+
+- Use different values for POSTGRES\_PASSWORD and  POSTGRES\_AUTHENTICATOR\_PASSWORD [\#56](https://github.com/hifis-net/ansible-role-rsd/issues/56)
+- Add more configurable variables for .env file [\#54](https://github.com/hifis-net/ansible-role-rsd/issues/54)
+
+**Merged pull requests:**
+
+- Add restart policy to docker-compose.yml template [\#58](https://github.com/hifis-net/ansible-role-rsd/pull/58) ([Normo](https://github.com/Normo))
+- Add variable rsd\_postgres\_authenticator\_password [\#57](https://github.com/hifis-net/ansible-role-rsd/pull/57) ([Normo](https://github.com/Normo))
+- Add more env variables to configure RSD [\#55](https://github.com/hifis-net/ansible-role-rsd/pull/55) ([Normo](https://github.com/Normo))
+
 ## [v1.0.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.0.0) (2022-06-29)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v0.1.0...v1.0.0)
