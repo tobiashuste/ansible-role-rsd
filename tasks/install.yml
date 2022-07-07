@@ -48,6 +48,16 @@
     mode: "0600"
   when: "create_dhparam_file"
 
+- name: "Prune docker volumes"
+  community.docker.docker_compose:
+    project_name: "rsd"
+    project_src: "{{ rsd_working_directory }}"
+    state: "absent"
+    remove_volumes: "yes"
+  when:
+    - "not is_initial_dryrun"
+    - "rsd_prune_volumes | default(false)"
+
 - name: "Start RSD-as-a-service"
   community.docker.docker_compose:
     project_name: "rsd"

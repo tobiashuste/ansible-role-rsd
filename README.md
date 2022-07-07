@@ -51,6 +51,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_nginx_dhparam_file_path`
   - Default: `"/opt/rsd/dhparam.pem"`
   - Description: Absolute destination path for DH parameters file
+- `rsd_prune_volumes`
+  - Default: `false`
+  - Description: Remove docker data volumes (this will force container recreation)
 
 ### RSD Env Variables
 - `rsd_domain`
