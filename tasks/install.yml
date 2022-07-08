@@ -38,6 +38,7 @@
     owner: "root"
     group: "root"
     mode: "0640"
+  notify: "Restart nginx"
 
 - name: "Generate DH parameters file for nginx"
   community.crypto.openssl_dhparam:
@@ -48,6 +49,7 @@
     group: "root"
     mode: "0600"
   when: "create_dhparam_file"
+  notify: "Restart nginx"
 
 - name: "Prune docker volumes"
   community.docker.docker_compose:

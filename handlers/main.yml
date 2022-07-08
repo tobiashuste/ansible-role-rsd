@@ -13,3 +13,13 @@
     recreate: "always"
   tags: "molecule-notest"
   when: "working_directory.stat.exists"
+
+- name: "Restart nginx"
+  community.docker.docker_compose:
+    project_name: "rsd"
+    project_src: "{{ rsd_working_directory }}"
+    services: "nginx"
+    state: "present"
+    recreate: "always"
+  tags: "molecule-notest"
+  when: "working_directory.stat.exists"
