@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
+# SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+#
+# SPDX-License-Identifier: Apache-2.0
+
+---
+
+- name: "Restart RSD-as-a-service"
+  community.docker.docker_compose:
+    project_name: "rsd"
+    project_src: "{{ rsd_working_directory }}"
+    state: "present"
+    recreate: "always"
+  tags: "molecule-notest"
+  when: "working_directory.stat.exists"

@@ -20,6 +20,7 @@
     group: "root"
     mode: "0600"
   no_log: True
+  notify: "Restart RSD-as-a-service"
 
 - name: "Copy docker-compose.yml"
   ansible.builtin.template:
@@ -56,7 +57,7 @@
     remove_volumes: "yes"
   when:
     - "not is_initial_dryrun"
-    - "rsd_prune_volumes | default(false)"
+    - "rsd_prune_volumes | default(false) | bool"
 
 - name: "Start RSD-as-a-service"
   community.docker.docker_compose:
