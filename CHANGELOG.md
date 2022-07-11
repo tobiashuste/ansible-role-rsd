@@ -1,5 +1,21 @@
 # Changelog
 
+## [v1.2.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.2.0) (2022-07-08)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.1.0...v1.2.0)
+
+**Closed issues:**
+
+- Add option to remove existing containers and volumes [\#61](https://github.com/hifis-net/ansible-role-rsd/issues/61)
+- Improve deployment by using docker-compose down + up [\#60](https://github.com/hifis-net/ansible-role-rsd/issues/60)
+
+**Merged pull requests:**
+
+- Add handler to restart nginx on config changes [\#65](https://github.com/hifis-net/ansible-role-rsd/pull/65) ([Normo](https://github.com/Normo))
+- Update README.md [\#64](https://github.com/hifis-net/ansible-role-rsd/pull/64) ([Normo](https://github.com/Normo))
+- Add handler to recreate containers on .env file changes [\#63](https://github.com/hifis-net/ansible-role-rsd/pull/63) ([Normo](https://github.com/Normo))
+- Add flag to force removal of docker data volumes [\#62](https://github.com/hifis-net/ansible-role-rsd/pull/62) ([Normo](https://github.com/Normo))
+
 ## [v1.1.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.1.0) (2022-07-04)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.0.0...v1.1.0)
