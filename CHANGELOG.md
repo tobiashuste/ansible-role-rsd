@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.2.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.2.0) (2022-07-08)
+## [v1.2.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.2.0) (2022-07-11)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.1.0...v1.2.0)
 
@@ -11,6 +11,7 @@
 
 **Merged pull requests:**
 
+- Prepare release v1.2.0 [\#66](https://github.com/hifis-net/ansible-role-rsd/pull/66) ([Normo](https://github.com/Normo))
 - Add handler to restart nginx on config changes [\#65](https://github.com/hifis-net/ansible-role-rsd/pull/65) ([Normo](https://github.com/Normo))
 - Update README.md [\#64](https://github.com/hifis-net/ansible-role-rsd/pull/64) ([Normo](https://github.com/Normo))
 - Add handler to recreate containers on .env file changes [\#63](https://github.com/hifis-net/ansible-role-rsd/pull/63) ([Normo](https://github.com/Normo))
