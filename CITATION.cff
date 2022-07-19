@@ -8,6 +8,7 @@ title: 'hifis.rsd Ansible role'
 message: >-
   "If you use this Ansible role, please cite it as
   below."
+abstract: 'Ansible role to set up the Research Software Directory.'
 type: 'software'
 authors:
   - given-names: 'Norman'
