@@ -53,4 +53,8 @@
   ansible.builtin.set_fact:
     create_dhparam_file: "{{ not dhparam_file.stat.exists }}"
 
+- name: "Determine if images need to be always pulled from registry."
+  ansible.builtin.set_fact:
+    pull_images: "{{ 'yes' if rsd_version == 'latest' else 'no' }}"
+
 ...
