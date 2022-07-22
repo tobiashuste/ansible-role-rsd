@@ -149,6 +149,9 @@ services:
   initial-spotlights:
     container_name: initial-spotlights
     image: {{ rsd_spotlight_migration_image }}
+{% if rsd_spotlight_migration_image | split(':') | last | lower == 'latest' %}
+    pull_policy: always
+{% endif %}
     environment:
       - POSTGREST_URL
       - PGRST_JWT_SECRET
