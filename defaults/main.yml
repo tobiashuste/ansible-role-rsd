@@ -37,7 +37,7 @@ rsd_tls_key_path: "/etc/ssl/private/rsd.key"
 rsd_nginx_dhparam_file_path: "/etc/ssl/private/dhparam.pem"
 
 # Software spotlights migration container image
-rsd_spotlight_migration_image: "ghcr.io/hifis-net/rsd-spotlight-migration:latest"
+rsd_spotlight_migration_image: "ghcr.io/hifis-net/rsd-spotlight-migration:v1.0.0"
 
 # RSD ENV variables
 rsd_domain: "localhost"
