@@ -59,7 +59,7 @@ Currently [supported platforms](meta/main.yml) are:
   - Default: `false`
   - Description: Set to `true` to migrate the software spotlights from hifis.net into the RSD (Helmholtz theme only).
 - `rsd_spotlight_migration_image`
-  - Default: `"ghcr.io/hifis-net/rsd-spotlight-migration:latest"`
+  - Default: `"ghcr.io/hifis-net/rsd-spotlight-migration:v1.0.0"`
   - Description: Container image for software spotlights migration
 
 ### RSD Env Variables
