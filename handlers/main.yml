@@ -11,6 +11,7 @@
     project_src: "{{ rsd_working_directory }}"
     state: "present"
     recreate: "always"
+    pull: "{{ pull_images }}"
   tags: "molecule-notest"
   when: "working_directory.stat.exists"
 
@@ -21,5 +22,6 @@
     services: "nginx"
     state: "present"
     recreate: "always"
+    pull: "{{ pull_images }}"
   tags: "molecule-notest"
   when: "working_directory.stat.exists"

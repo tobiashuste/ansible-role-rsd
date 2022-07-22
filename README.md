@@ -30,6 +30,7 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_version`
   - Default: `"latest"`
   - Description: What version of the RSD-as-a-service container images to deploy (image tag name).
+    If `latest` is used the container images will always be pulled prior starting the application.
 - `rsd_container_registry_path`
   - Default: `"ghcr.io/hifis-net/rsd-saas"`
   - Description: Path to the container registry from where the images are pulled.
