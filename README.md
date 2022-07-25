@@ -55,6 +55,12 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_prune_volumes`
   - Default: `false`
   - Description: Set to `true` to remove docker data volumes (**this will force container recreation**).
+- `rsd_migrate_spotlights`
+  - Default: `false`
+  - Description: Set to `true` to migrate the software spotlights from hifis.net into the RSD (Helmholtz theme only).
+- `rsd_spotlight_migration_image`
+  - Default: `"ghcr.io/hifis-net/rsd-spotlight-migration:v1.0.0"`
+  - Description: Container image for software spotlights migration
 
 ### RSD Env Variables
 - `rsd_domain`
