@@ -1,13 +1,13 @@
 [[package]]
 name = "ansible"
-version = "6.0.0"
+version = "6.1.0"
 description = "Radically simple IT automation"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-ansible-core = ">=2.13.0,<2.14.0"
+ansible-core = ">=2.13.1,<2.14.0"
 
 [[package]]
 name = "ansible-compat"
@@ -23,8 +23,8 @@ PyYAML = "*"
 subprocess-tee = ">=0.3.5"
 
 [package.extras]
-docs = ["sphinx-autobuild (>=0.7.1,<1.0)", "sphinx (>=4.2.0,<5.0)", "sphinx-ansible-theme", "myst-parser"]
-test = ["coverage", "flaky", "pip-tools", "pytest", "pytest-markdown", "pytest-mock", "pytest-plus"]
+test = ["pytest-plus", "pytest-mock", "pytest-markdown", "pytest", "pip-tools", "flaky", "coverage"]
+docs = ["myst-parser", "sphinx-ansible-theme", "sphinx (>=4.2.0,<5.0)", "sphinx-autobuild (>=0.7.1,<1.0)"]
 
 [[package]]
 name = "ansible-core"
@@ -214,7 +214,7 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-test = ["flake8 (==3.7.8)", "hypothesis (==3.55.3)"]
+test = ["hypothesis (==3.55.3)", "flake8 (==3.7.8)"]
 
 [[package]]
 name = "cookiecutter"
@@ -416,12 +416,12 @@ ansible-compat = ">=0.5.0"
 docker = ">=4.3.1"
 molecule = ">=3.4.0"
 requests = "*"
-selinux = {version = "*", markers = "sys_platform == \"linux\" or sys_platform == \"linux2\""}
+selinux = {version = "*", markers = "sys_platform == \"linux2\" or sys_platform == \"linux\""}
 
 [package.extras]
-docs = ["simplejson", "sphinx", "sphinx-ansible-theme (>=0.2.2)"]
-lint = ["pre-commit (>=1.21.0)"]
 test = ["molecule"]
+lint = ["pre-commit (>=1.21.0)"]
+docs = ["sphinx-ansible-theme (>=0.2.2)", "sphinx", "simplejson"]
 
 [[package]]
 name = "packaging"
@@ -451,8 +451,8 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-dev = ["pre-commit", "tox"]
-testing = ["pytest", "pytest-benchmark"]
+testing = ["pytest-benchmark", "pytest"]
+dev = ["tox", "pre-commit"]
 
 [[package]]
 name = "poyo"
@@ -605,10 +605,10 @@ optional = false
 python-versions = "*"
 
 [package.extras]
-examples = ["html5lib", "packaging", "pygraphviz", "requests"]
-lint = ["black", "flake8"]
-release = ["setl", "towncrier"]
-test = ["commentjson", "packaging", "pytest"]
+test = ["pytest", "packaging", "commentjson"]
+release = ["towncrier", "setl"]
+lint = ["flake8", "black"]
+examples = ["requests", "pygraphviz", "packaging", "html5lib"]
 
 [[package]]
 name = "reuse"
@@ -692,7 +692,7 @@ optional = false
 python-versions = ">=3.6"
 
 [package.extras]
-test = ["enrich (>=1.2.6)", "mock (>=4.0.3)", "molecule (>=3.4.0)", "pytest-cov (>=2.12.1)", "pytest-plus (>=0.2)", "pytest-xdist (>=2.3.0)", "pytest (>=6.2.5)"]
+test = ["pytest (>=6.2.5)", "pytest-xdist (>=2.3.0)", "pytest-plus (>=0.2)", "pytest-cov (>=2.12.1)", "molecule (>=3.4.0)", "mock (>=4.0.3)", "enrich (>=1.2.6)"]
 
 [[package]]
 name = "text-unidecode"
@@ -762,12 +762,12 @@ pyyaml = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "b1b7fa06bbcf93df26915378aa73fd0de4479d62141462302f8ac8af50745398"
+content-hash = "cba705d9ce61537e2c57a03637bbb79ab33c1edbae5585757b7d3c4343b65ea2"
 
 [metadata.files]
 ansible = [
-    {file = "ansible-6.0.0-py3-none-any.whl", hash = "sha256:3a4516072660e34d4647db1627c401dffcbec23c50633d71ac7902e8c934e370"},
-    {file = "ansible-6.0.0.tar.gz", hash = "sha256:641a2c27bc5768f9a8ad14880f1f6e571c1f2af1d45e76f271d76e3f74754c53"},
+    {file = "ansible-6.1.0-py3-none-any.whl", hash = "sha256:52c89558d4ab8238828f1b98f653b148738065895cefbef9c174beb663bea3a0"},
+    {file = "ansible-6.1.0.tar.gz", hash = "sha256:91e4b23945f190aaa123c6ba4f8accb8e7f8905991bd3bb19b89afbdca456822"},
 ]
 ansible-compat = [
     {file = "ansible-compat-2.2.0.tar.gz", hash = "sha256:676db8ec0449d1f07038625b8ebb8ceef5f8ad3a1af3ee82d4ed66b9b04cb6fa"},
