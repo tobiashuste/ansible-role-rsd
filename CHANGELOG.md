@@ -1,13 +1,32 @@
 # Changelog
 
-## [v1.2.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.2.0) (2022-07-11)
+## [v1.3.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.3.0) (2022-07-26)
 
-[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.1.0...v1.2.0)
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.2.0...v1.3.0)
+
+**Implemented enhancements:**
+
+- Support matomo environment variables [\#78](https://github.com/hifis-net/ansible-role-rsd/issues/78)
+- Image by tag is not pulled if tag does not change [\#74](https://github.com/hifis-net/ansible-role-rsd/issues/74)
+- Support hifis.net spotlight migration for RSD [\#72](https://github.com/hifis-net/ansible-role-rsd/issues/72)
 
 **Closed issues:**
 
-- Add option to remove existing containers and volumes [\#61](https://github.com/hifis-net/ansible-role-rsd/issues/61)
-- Improve deployment by using docker-compose down + up [\#60](https://github.com/hifis-net/ansible-role-rsd/issues/60)
+- Provide citation metadata [\#69](https://github.com/hifis-net/ansible-role-rsd/issues/69)
+
+**Merged pull requests:**
+
+- Integrate matomo support [\#79](https://github.com/hifis-net/ansible-role-rsd/pull/79) ([cmeessen](https://github.com/cmeessen))
+- Bump molecule from 4.0.0 to 4.0.1 [\#77](https://github.com/hifis-net/ansible-role-rsd/pull/77) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Always pull container images in case of using image tag 'latest' [\#76](https://github.com/hifis-net/ansible-role-rsd/pull/76) ([Normo](https://github.com/Normo))
+- Support software spotlights migration [\#73](https://github.com/hifis-net/ansible-role-rsd/pull/73) ([Normo](https://github.com/Normo))
+- Add citation metadata [\#71](https://github.com/hifis-net/ansible-role-rsd/pull/71) ([Normo](https://github.com/Normo))
+- Bump ansible from 6.0.0 to 6.1.0 [\#68](https://github.com/hifis-net/ansible-role-rsd/pull/68) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump yamllint from 1.26.3 to 1.27.1 [\#67](https://github.com/hifis-net/ansible-role-rsd/pull/67) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.2.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.2.0) (2022-07-11)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.1.0...v1.2.0)
 
 **Merged pull requests:**
 
@@ -64,11 +83,6 @@
 - Bug: RSD environment template file not found [\#9](https://github.com/hifis-net/ansible-role-rsd/issues/9)
 - Ignore errors during initials dry-run [\#48](https://github.com/hifis-net/ansible-role-rsd/pull/48) ([Normo](https://github.com/Normo))
 - Fix molecule lint [\#29](https://github.com/hifis-net/ansible-role-rsd/pull/29) ([Normo](https://github.com/Normo))
-
-**Closed issues:**
-
-- Change package management tool named in CONTRIBUTING guide [\#40](https://github.com/hifis-net/ansible-role-rsd/issues/40)
-- Prepare release v1.0.0 [\#51](https://github.com/hifis-net/ansible-role-rsd/issues/51)
 
 **Merged pull requests:**
 
