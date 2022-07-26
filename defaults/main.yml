@@ -1,5 +1,7 @@
 # SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
 # SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre Potsdam - GFZ German Research Centre for Geosciences
+
 #
 # SPDX-License-Identifier: Apache-2.0
 
@@ -60,5 +62,7 @@ rsd_surfconext_client_secret: "changeme"
 rsd_zenodo_access_token: "changeme"
 rsd_crossref_contact_email: ""
 rsd_hotjar_id: ""
+rsd_matomo_url: ""
+rsd_matomo_id: ""
 
 ...

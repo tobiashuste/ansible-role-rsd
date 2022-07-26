@@ -1,6 +1,7 @@
 <!--
 SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
 SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+SPDX-FileCopyrightText: 2022 Helmholtz Centre Potsdam - GFZ German Research Centre for Geosciences
 
 SPDX-License-Identifier: Apache-2.0
 -->
@@ -123,6 +124,12 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_hotjar_id`
   - Default: `""`
   - Description: ID for Hotjar Tracking Code (needs to be a number).
+- `rsd_matomo_url`
+  - Default: `""`
+  - Description: Tracking URL (should end with a trailing slash)
+- `rsd_matomo_id`
+  - Default: `""`
+  - Description: Matomo ID for the corresponding tracking URL
 
 ## Dependencies
 
@@ -153,4 +160,4 @@ This role was created by [HIFIS Software Services](https://www.hifis.net/).
 We would like to thank and give credits to the following contributors of this
 project:
 
-* [tharun634](https://github.com/tharun634) 
+* [tharun634](https://github.com/tharun634)
