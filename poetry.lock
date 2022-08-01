@@ -43,17 +43,17 @@ resolvelib = ">=0.5.3,<0.9.0"
 
 [[package]]
 name = "ansible-lint"
-version = "6.3.0"
+version = "6.4.0"
 description = "Checks playbooks for practices and behavior that could potentially be improved"
 category = "dev"
 optional = false
 python-versions = ">=3.8"
 
 [package.dependencies]
-ansible-compat = ">=2.1.0"
+ansible-compat = ">=2.2.0"
 ansible-core = ">=2.12.0"
 enrich = ">=1.2.6"
-jsonschema = ">=4.6.0"
+jsonschema = ">=4.8.0"
 packaging = "*"
 pytest = "*"
 pyyaml = "*"
@@ -336,7 +336,7 @@ jinja2 = "*"
 
 [[package]]
 name = "jsonschema"
-version = "4.6.0"
+version = "4.9.0"
 description = "An implementation of JSON Schema validation for Python"
 category = "dev"
 optional = false
@@ -762,7 +762,7 @@ pyyaml = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "cba705d9ce61537e2c57a03637bbb79ab33c1edbae5585757b7d3c4343b65ea2"
+content-hash = "245bf74622fbe364d2ffdab5a61d1fa824ba0888147f056a3d55ef1853c80fd9"
 
 [metadata.files]
 ansible = [
@@ -778,8 +778,8 @@ ansible-core = [
     {file = "ansible_core-2.13.1-py3-none-any.whl", hash = "sha256:45d55e052bcea487366b0893b22f247e913a1f0948197658b7f3532a37ab6841"},
 ]
 ansible-lint = [
-    {file = "ansible-lint-6.3.0.tar.gz", hash = "sha256:f57f520ae5d810ce062157dc7d633990ad2fbec81bbbb34ccc4ce3a0c21fcd38"},
-    {file = "ansible_lint-6.3.0-py3-none-any.whl", hash = "sha256:144b61a43fb9bad9fb19529105a98c87b8b84c99519290209dc624231f5b70ca"},
+    {file = "ansible-lint-6.4.0.tar.gz", hash = "sha256:c5a76306cae906a260cf7286ca87c4d03ba4492b2ed7bfea21ad11fdf3c7e8d1"},
+    {file = "ansible_lint-6.4.0-py3-none-any.whl", hash = "sha256:bea12b88a69c1f9a6746ec0532aa72d6e7ca44918eea9a8110bc321b208f49e7"},
 ]
 arrow = [
     {file = "arrow-1.2.2-py3-none-any.whl", hash = "sha256:d622c46ca681b5b3e3574fcb60a04e5cc81b9625112d5fb2b44220c36c892177"},
@@ -945,8 +945,8 @@ jinja2-time = [
     {file = "jinja2_time-0.2.0-py2.py3-none-any.whl", hash = "sha256:d3eab6605e3ec8b7a0863df09cc1d23714908fa61aa6986a845c20ba488b4efa"},
 ]
 jsonschema = [
-    {file = "jsonschema-4.6.0-py3-none-any.whl", hash = "sha256:1c92d2db1900b668201f1797887d66453ab1fbfea51df8e4b46236689c427baf"},
-    {file = "jsonschema-4.6.0.tar.gz", hash = "sha256:9d6397ba4a6c0bf0300736057f649e3e12ecbc07d3e81a0dacb72de4e9801957"},
+    {file = "jsonschema-4.9.0-py3-none-any.whl", hash = "sha256:5d0be0cd1b670438b71c3d3145b2abba1f9d197e3e91adc4c4bae4c0e114e252"},
+    {file = "jsonschema-4.9.0.tar.gz", hash = "sha256:df10e65c8f3687a48e93d0d348ce0ce5f897b5a28e9bbcbbe8f7c7eaf019e850"},
 ]
 license-expression = [
     {file = "license-expression-30.0.0.tar.gz", hash = "sha256:ad638292aa8493f84354909b517922cb823582c2ce2c4d880e42544a86bea8dd"},
