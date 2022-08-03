@@ -1,8 +1,8 @@
 # Changelog
 
-## [v1.3.1](https://github.com/hifis-net/ansible-role-rsd/tree/v1.3.1) (2022-08-03)
+## [v1.3.2](https://github.com/hifis-net/ansible-role-rsd/tree/v1.3.2) (2022-08-03)
 
-[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.3.0...v1.3.1)
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.3.0...v1.3.2)
 
 **Fixed bugs:**
 
