@@ -1,5 +1,18 @@
 # Changelog
 
+## [v1.3.1](https://github.com/hifis-net/ansible-role-rsd/tree/v1.3.1) (2022-08-03)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.3.0...v1.3.1)
+
+**Fixed bugs:**
+
+- Matomo environment variables not in docker-compose.yml [\#81](https://github.com/hifis-net/ansible-role-rsd/issues/81)
+
+**Merged pull requests:**
+
+- Add matomo variables to docker-compose template [\#82](https://github.com/hifis-net/ansible-role-rsd/pull/82) ([ruester](https://github.com/ruester))
+- Bump ansible-lint from 6.3.0 to 6.4.0 [\#80](https://github.com/hifis-net/ansible-role-rsd/pull/80) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.3.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.3.0) (2022-07-26)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.2.0...v1.3.0)
