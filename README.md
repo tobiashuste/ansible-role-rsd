@@ -64,6 +64,10 @@ Currently [supported platforms](meta/main.yml) are:
   - Description: Container image for software spotlights migration
 
 ### RSD Env Variables
+- `rsd_compose_project_name`
+  - Default: `"rsd"`
+  - Description: Define the [Compose project name](https://docs.docker.com/compose/reference/envvars/#compose_project_name),
+    if you are running different versions of the RSD.
 - `rsd_domain`
   - Default: `"localhost"`
   - Description: Domain name under which the RSD should be accessible.
