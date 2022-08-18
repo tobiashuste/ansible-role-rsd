@@ -53,7 +53,7 @@
 
 - name: "Prune docker volumes"
   community.docker.docker_compose:
-    project_name: "rsd"
+    project_name: "{{ rsd_compose_project_name }}"
     project_src: "{{ rsd_working_directory }}"
     state: "absent"
     remove_volumes: "yes"
@@ -63,7 +63,7 @@
 
 - name: "Start RSD-as-a-service"
   community.docker.docker_compose:
-    project_name: "rsd"
+    project_name: "{{ rsd_compose_project_name }}"
     project_src: "{{ rsd_working_directory }}"
     state: "present"
     pull: "{{ pull_images }}"

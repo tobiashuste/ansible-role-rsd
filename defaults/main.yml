@@ -43,6 +43,7 @@ rsd_spotlight_migration_image: "ghcr.io/hifis-net/rsd-spotlight-migration:v1.0.0
 
 # RSD ENV variables
 rsd_domain: "localhost"
+rsd_compose_project_name: "rsd"
 rsd_auth_providers: "SURFCONEXT;HELMHOLTZAAI"
 rsd_hgfaai_client_id: "rsd-dev"
 rsd_hgfaai_client_secret: "changeme"
