@@ -7,7 +7,7 @@
 
 - name: "Restart RSD-as-a-service"
   community.docker.docker_compose:
-    project_name: "{{ rsd_compose_project_name | default('rsd') }}"
+    project_name: "{{ rsd_compose_project_name }}"
     project_src: "{{ rsd_working_directory }}"
     state: "present"
     recreate: "always"
@@ -17,7 +17,7 @@
 
 - name: "Restart nginx"
   community.docker.docker_compose:
-    project_name: "{{ rsd_compose_project_name | default('rsd') }}"
+    project_name: "{{ rsd_compose_project_name }}"
     project_src: "{{ rsd_working_directory }}"
     services: "nginx"
     state: "present"
