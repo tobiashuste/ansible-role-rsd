@@ -8,6 +8,12 @@ SPDX-License-Identifier: Apache-2.0
 
 # Ansible Role: Research Software Directory (RSD-as-a-service)
 
+[![CI status](https://github.com/hifis-net/ansible-role-rsd/actions/workflows/ci.yml/badge.svg)](https://github.com/hifis-net/ansible-role-rsd/actions/workflows/ci.yml)
+[![Ansible Role: hifis.unattended_upgrades](https://img.shields.io/ansible/role/58679)](https://galaxy.ansible.com/hifis/rsd)
+[![Ansible Quality Score](https://img.shields.io/ansible/quality/58679)](https://galaxy.ansible.com/hifis/rsd)
+[![Ansible Role Downloads](https://img.shields.io/ansible/role/d/58679)](https://galaxy.ansible.com/hifis/rsd)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7008976.svg)](https://doi.org/10.5281/zenodo.7008976)
+
 Setting up the [Research Software Directory](https://github.com/research-software-directory/RSD-as-a-service)
 using Ansible.
 
