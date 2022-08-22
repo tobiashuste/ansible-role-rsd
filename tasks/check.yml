@@ -26,6 +26,19 @@
   loop: "{{ rsd_dependencies }}"
   ignore_errors: "{{ is_initial_dryrun }}"
 
+- name: "Check for Docker Compose CLI plugin command"
+  ansible.builtin.command:
+    cmd: "docker compose version"
+  changed_when: false
+  ignore_errors: true
+  register: "dc_cmd"
+  when: "not rsd_docker_compose_command is defined"
+
+- name: "Set Docker Compose command variable"
+  ansible.builtin.set_fact:
+    rsd_docker_compose_cmd: "docker compose"
+  when: "dc_cmd.rc == 0"
+
 - name: "Get stats of TLS certificate"
   ansible.builtin.stat:
     path: "{{ rsd_tls_cert_path }}"
