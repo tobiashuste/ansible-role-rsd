@@ -18,6 +18,7 @@
 
 **Merged pull requests:**
 
+- Prepare release v1.4.0 [\#93](https://github.com/hifis-net/ansible-role-rsd/pull/93) ([Normo](https://github.com/Normo))
 - Bump ansible-lint from 6.4.0 to 6.5.0 [\#92](https://github.com/hifis-net/ansible-role-rsd/pull/92) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Fix: Docker Compose validation on systems with Docker Compose CLI plugin [\#90](https://github.com/hifis-net/ansible-role-rsd/pull/90) ([Normo](https://github.com/Normo))
 - Add badges to README.md [\#88](https://github.com/hifis-net/ansible-role-rsd/pull/88) ([Normo](https://github.com/Normo))
