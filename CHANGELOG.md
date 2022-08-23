@@ -1,5 +1,29 @@
 # Changelog
 
+## [v1.4.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.4.0) (2022-08-23)
+
+[Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.3.2...v1.4.0)
+
+**Implemented enhancements:**
+
+- Enable docker-compose project names [\#85](https://github.com/hifis-net/ansible-role-rsd/issues/85)
+
+**Fixed bugs:**
+
+- docker compose validation fails on systems with Docker Compose CLI plugin [\#89](https://github.com/hifis-net/ansible-role-rsd/issues/89)
+
+**Closed issues:**
+
+- Support data migration from existing RSD [\#70](https://github.com/hifis-net/ansible-role-rsd/issues/70)
+
+**Merged pull requests:**
+
+- Bump ansible-lint from 6.4.0 to 6.5.0 [\#92](https://github.com/hifis-net/ansible-role-rsd/pull/92) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Fix: Docker Compose validation on systems with Docker Compose CLI plugin [\#90](https://github.com/hifis-net/ansible-role-rsd/pull/90) ([Normo](https://github.com/Normo))
+- Add badges to README.md [\#88](https://github.com/hifis-net/ansible-role-rsd/pull/88) ([Normo](https://github.com/Normo))
+- Enable compose project names [\#87](https://github.com/hifis-net/ansible-role-rsd/pull/87) ([Normo](https://github.com/Normo))
+- Bump ansible from 6.1.0 to 6.2.0 [\#84](https://github.com/hifis-net/ansible-role-rsd/pull/84) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [v1.3.2](https://github.com/hifis-net/ansible-role-rsd/tree/v1.3.2) (2022-08-03)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.3.0...v1.3.2)
@@ -40,6 +64,11 @@
 ## [v1.2.0](https://github.com/hifis-net/ansible-role-rsd/tree/v1.2.0) (2022-07-11)
 
 [Full Changelog](https://github.com/hifis-net/ansible-role-rsd/compare/v1.1.0...v1.2.0)
+
+**Closed issues:**
+
+- Add option to remove existing containers and volumes [\#61](https://github.com/hifis-net/ansible-role-rsd/issues/61)
+- Improve deployment by using docker-compose down + up [\#60](https://github.com/hifis-net/ansible-role-rsd/issues/60)
 
 **Merged pull requests:**
 
@@ -96,6 +125,11 @@
 - Bug: RSD environment template file not found [\#9](https://github.com/hifis-net/ansible-role-rsd/issues/9)
 - Ignore errors during initials dry-run [\#48](https://github.com/hifis-net/ansible-role-rsd/pull/48) ([Normo](https://github.com/Normo))
 - Fix molecule lint [\#29](https://github.com/hifis-net/ansible-role-rsd/pull/29) ([Normo](https://github.com/Normo))
+
+**Closed issues:**
+
+- Change package management tool named in CONTRIBUTING guide [\#40](https://github.com/hifis-net/ansible-role-rsd/issues/40)
+- Prepare release v1.0.0 [\#51](https://github.com/hifis-net/ansible-role-rsd/issues/51)
 
 **Merged pull requests:**
 
