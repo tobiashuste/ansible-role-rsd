@@ -29,7 +29,7 @@
     owner: "root"
     group: "root"
     mode: "0640"
-    validate: "docker-compose -f %s config -q"
+    validate: "{{ rsd_docker_compose_cmd | default('docker-compose') }} -f %s config -q"
 
 - name: "Copy nginx configuration file"
   ansible.builtin.template:

@@ -44,6 +44,9 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_environment_file`
   - Default: `"rsd-secrets.env"`
   - Description: Inventory specific environment file.
+- `rsd_docker_compose_cmd`
+  - Default: `"docker-compose"`
+  - Description: Docker Compose command used to validate docker-compose.yml.
 - `rsd_docker_compose_template_file`
   - Default: `"docker-compose.yml.j2"`
   - Description: Template file for docker-compose.yml.
