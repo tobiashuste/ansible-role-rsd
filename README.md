@@ -131,9 +131,6 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_crossref_contact_email`
   - Default: `""`
   - Description: Email address that Crossref can contact you with to comply with their "polite" policy.
-- `rsd_hotjar_id`
-  - Default: `""`
-  - Description: ID for Hotjar Tracking Code (needs to be a number).
 - `rsd_matomo_url`
   - Default: `""`
   - Description: Tracking URL (should end with a trailing slash)

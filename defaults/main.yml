@@ -61,7 +61,6 @@ rsd_jwt_secret: "changemeChangemeChangemeChangeme"
 rsd_surfconext_client_secret: "changeme"
 rsd_zenodo_access_token: "changeme"
 rsd_crossref_contact_email: ""
-rsd_hotjar_id: ""
 rsd_matomo_url: ""
 rsd_matomo_id: ""
 
