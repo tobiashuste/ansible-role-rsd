@@ -98,9 +98,6 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_hgfaai_well_known_url`
   - Default: `"https://login-dev.helmholtz.de/oauth2/.well-known/openid-configuration"`
   - Description: Helmholtz AAI well known URL.
-- `rsd_hgfaai_token_url`
-  - Default: `"https://login-dev.helmholtz.de/oauth2/token"`
-  - Description: Helmholtz AAI token URL.
 - `rsd_hgfaai_allow_external_users`
   - Default: `false`
   - Description: Set to `true` to allow users from non-Helmholtz centres or social IdPs.
@@ -134,9 +131,6 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_crossref_contact_email`
   - Default: `""`
   - Description: Email address that Crossref can contact you with to comply with their "polite" policy.
-- `rsd_hotjar_id`
-  - Default: `""`
-  - Description: ID for Hotjar Tracking Code (needs to be a number).
 - `rsd_matomo_url`
   - Default: `""`
   - Description: Tracking URL (should end with a trailing slash)
