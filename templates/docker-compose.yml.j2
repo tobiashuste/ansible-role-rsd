@@ -120,6 +120,19 @@ services:
       - net
     restart: unless-stopped
 
+{% if rsd_swagger_enabled | default(false) | bool %}
+  swagger:
+    image: swaggerapi/swagger-ui:{{ rsd_swagger_version }}
+    expose:
+      - 8080
+    environment:
+      - API_URL=${POSTGREST_URL_EXTERNAL}
+      - SUPPORTED_SUBMIT_METHODS=[]
+    networks:
+      - net
+    restart: unless-stopped
+{% endif %}
+
   nginx:
     image: {{ rsd_container_registry_path }}/nginx:{{ rsd_version }}
     ports:
@@ -130,6 +143,9 @@ services:
       - backend
       - auth
       - frontend
+{% if rsd_swagger_enabled | default(false) | bool%}
+      - swagger
+{% endif %}
     networks:
       - net
     volumes:
