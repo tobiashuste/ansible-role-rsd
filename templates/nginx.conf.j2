@@ -1,5 +1,6 @@
 # SPDX-FileCopyrightText: 2022 Helmholtz Centre for Environmental Research (UFZ)
 # SPDX-FileCopyrightText: 2022 Helmholtz-Zentrum Dresden-Rossendorf (HZDR)
+# SPDX-FileCopyrightText: 2022 Helmholtz Centre Potsdam - GFZ German Research Centre for Geosciences
 #
 # SPDX-License-Identifier: Apache-2.0
 
@@ -100,4 +101,11 @@ server {
         proxy_set_header Accept application/octet-stream;
         proxy_pass http://backend/;
     }
+
+{% if rsd_swagger_enabled | default(false) | bool %}
+    # Provide user interface for API access
+    location /swagger/ {
+        proxy_pass http://swagger:8080/;
+    }
+{% endif %}
 }

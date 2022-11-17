@@ -62,6 +62,12 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_nginx_dhparam_file_path`
   - Default: `"/etc/ssl/private/dhparam.pem"`
   - Description: Absolute destination path for DH parameters file.
+- `rsd_swagger_enabled`
+  - Default: `false`
+  - Description: Whether Swagger is enabled or not.
+- `rsd_swagger_version`
+  - Default: `v4.15.0`
+  - Description: version of of the Docker image `swaggerapi/swagger-ui`.
 - `rsd_prune_volumes`
   - Default: `false`
   - Description: Set to `true` to remove docker data volumes (**this will force container recreation**).
