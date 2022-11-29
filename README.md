@@ -107,6 +107,18 @@ Currently [supported platforms](meta/main.yml) are:
 - `rsd_hgfaai_allow_external_users`
   - Default: `false`
   - Description: Set to `true` to allow users from non-Helmholtz centres or social IdPs.
+- `rsd_postgres_db_host`
+  - Default: `"database"`
+  - Description: Postgres database hostname.
+- `rsd_postgres_db_host_port`
+  - Default: `"5432"`
+  - Description: Postgres database host port.
+- `rsd_postgres_db`
+  - Default: `"rsd-db"`
+  - Description: Postgres database name.
+- `rsd_postgres_user`
+  - Default: `"rsd"`
+  - Description: Postgres user name.
 - `rsd_postgres_password`
   - Default: `"changeme"`
   - Description: Postgres password.
