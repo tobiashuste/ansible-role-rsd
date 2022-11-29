@@ -8,7 +8,7 @@
 ---
 # Python dependencies for RSD role
 rsd_dependencies:
-  - "{{ 'docker' if lookup('community.docker.collection_version', 'community.docker') is version('v3.0.0', '<' else 'requests') }}"
+  - "{{ 'docker' if lookup('community.general.collection_version', 'community.docker') is version('3.0.0', '<') else 'requests' }}"
   - "docker-compose"
 
 # The path where the repository will be checked out.
