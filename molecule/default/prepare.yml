@@ -11,7 +11,11 @@
       storage-driver: "vfs"
     pip_install_packages:
       - name: "docker"
+        state: "absent"
       - name: "docker-compose"
+        state: "present"
+      - name: "requests"
+        state: "present"
   tasks:
     - name: "Update apt cache"
       ansible.builtin.apt:
