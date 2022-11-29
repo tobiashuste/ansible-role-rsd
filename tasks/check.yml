@@ -15,7 +15,7 @@
 
 - name: "Check version of community.docker"
   ansible.builtin.debug:
-    msg: "community.general version {{ lookup('community.docker.collection_version', 'community.docker') }}"
+    msg: "community.docker version {{ lookup('community.general.collection_version', 'community.docker') }}"
 
 - name: "Check for python modules"
   community.general.python_requirements_info:
