@@ -73,6 +73,15 @@ jobs:
             | sudo tee /etc/apt/sources.list.d/devel:kubic:libcontainers:unstable.list > /dev/null
           sudo apt-get update -qq
           sudo apt-get -qq -y install podman
+          podman info
+        shell: "bash"
+
+      - name: "Try a more modern runc version"
+        run: |
+          wget https://github.com/opencontainers/runc/releases/download/v1.1.4/runc.amd64
+          chmod +x runc.amd64
+          sudo mv runc.amd64 /usr/sbin/runc
+          podman info
         shell: "bash"
 
       - name: "Prepare the job environment."
