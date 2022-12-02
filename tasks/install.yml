@@ -67,7 +67,6 @@
     project_src: "{{ rsd_working_directory }}"
     state: "present"
     pull: "{{ pull_images }}"
-  tags: "molecule-notest"
   when: "not is_initial_dryrun"
 
 ...

@@ -12,7 +12,6 @@
     state: "present"
     recreate: "always"
     pull: "{{ pull_images }}"
-  tags: "molecule-notest"
   when: "working_directory.stat.exists"
 
 - name: "Restart nginx"
@@ -23,5 +22,4 @@
     state: "present"
     recreate: "always"
     pull: "{{ pull_images }}"
-  tags: "molecule-notest"
   when: "working_directory.stat.exists"

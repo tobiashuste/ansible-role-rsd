@@ -9,6 +9,10 @@
   vars:
     docker_daemon_options:
       storage-driver: "vfs"
+      default-runtime: "crun"
+      runtimes:
+        crun:
+          path: "/usr/bin/crun"
     pip_install_packages:
       - name: "docker"
         state: "absent"
@@ -22,6 +26,11 @@
         update_cache: yes
         cache_valid_time: 600
       when: "ansible_os_family == 'Debian'"
+
+    - name: "Install crun container runtime"
+      ansible.builtin.apt:
+        name: "crun"
+        state: "present"
 
     - name: "Apply geerlingguy.pip role"
       ansible.builtin.include_role:
